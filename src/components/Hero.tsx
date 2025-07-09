@@ -34,21 +34,9 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
             Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-            <Button variant="hero" size="lg" className="group">
-              <Play className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-              Watch Our Reel
-            </Button>
-            <Button variant="accent" size="lg">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
