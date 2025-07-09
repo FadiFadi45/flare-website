@@ -52,7 +52,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-background scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
