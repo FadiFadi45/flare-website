@@ -63,7 +63,7 @@ const Contact = () => {
             <span className="text-sm font-medium text-primary">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Create Something <span className="text-primary">Amazing</span>
+            Let's Create Something <span className="text-gradient-logo">Amazing</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to bring your vision to life? We'd love to hear about your project 

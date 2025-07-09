@@ -24,9 +24,9 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-glow animate-glow-pulse">Flare Media</span>
+            <span className="text-gradient-logo animate-glow-pulse">Flare Media</span>
             <br />
-            <span className="gradient-text bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-gradient-logo">
               Creates Stories
             </span>
             <br />
@@ -53,19 +53,19 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500M+</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient-logo mb-2">500M+</div>
               <div className="text-sm text-muted-foreground">Total Views</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">250+</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient-logo mb-2">250+</div>
               <div className="text-sm text-muted-foreground">Creators Managed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient-logo mb-2">50+</div>
               <div className="text-sm text-muted-foreground">Original Productions</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient-logo mb-2">15+</div>
               <div className="text-sm text-muted-foreground">Platform Partners</div>
             </div>
           </div>

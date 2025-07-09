@@ -61,7 +61,7 @@ const Services = () => {
             <span className="text-sm font-medium">Our Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Everything You Need to <span className="text-primary">Succeed</span>
+            Everything You Need to <span className="text-gradient-logo">Succeed</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From initial concept to global distribution, we provide comprehensive services 
@@ -89,7 +89,7 @@ const Services = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                      <div className="w-1.5 h-1.5 gradient-logo rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}

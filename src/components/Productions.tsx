@@ -68,7 +68,7 @@ const Productions = () => {
             <span className="text-sm font-medium text-primary">Original Productions</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Stories That <span className="text-primary">Captivate</span>
+            Stories That <span className="text-gradient-logo">Captivate</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From web series to documentaries, our original productions showcase compelling 

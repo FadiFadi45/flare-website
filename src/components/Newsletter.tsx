@@ -21,7 +21,7 @@ const Newsletter = () => {
                   </div>
                   
                   <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                    Stay Ahead of the <span className="text-primary">Curve</span>
+                    Stay Ahead of the <span className="text-gradient-logo">Curve</span>
                   </h2>
                   
                   <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -70,26 +70,26 @@ const Newsletter = () => {
                 <div className="bg-secondary/30 p-8 lg:p-12 flex flex-col justify-center">
                   <div className="space-y-8">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary mb-2">25,000+</div>
-                      <div className="text-sm text-muted-foreground flex items-center justify-center">
-                        <Users className="w-4 h-4 mr-2" />
-                        Industry Professionals
-                      </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                      <div className="text-sm text-muted-foreground flex items-center justify-center">
-                        <TrendingUp className="w-4 h-4 mr-2" />
-                        Open Rate
-                      </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-primary mb-2">Weekly</div>
-                      <div className="text-sm text-muted-foreground flex items-center justify-center">
-                        <Mail className="w-4 h-4 mr-2" />
-                        Fresh Content
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">25,000+</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <Users className="w-4 h-4 mr-2" />
+                         Industry Professionals
+                       </div>
+                     </div>
+                     
+                     <div className="text-center">
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">98%</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <TrendingUp className="w-4 h-4 mr-2" />
+                         Open Rate
+                       </div>
+                     </div>
+                     
+                     <div className="text-center">
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">Weekly</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <Mail className="w-4 h-4 mr-2" />
+                         Fresh Content
                       </div>
                     </div>
                   </div>
