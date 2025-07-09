@@ -55,15 +55,15 @@ const Services = () => {
     <section id="services" className="py-20 bg-background scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-secondary/30 rounded-full px-4 py-2 mb-6">
-            <Play className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Our Services</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-2 bg-secondary/30 rounded-full px-6 py-3 mb-8">
+            <Play className="w-5 h-5 text-primary" />
+            <span className="text-base font-semibold">Our Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 font-heading">
             Everything You Need to <span className="text-gradient-logo">Succeed</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
             From initial concept to global distribution, we provide comprehensive services 
             to help creators and brands thrive in the digital content landscape.
           </p>
@@ -80,15 +80,15 @@ const Services = () => {
                 <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
                   <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardTitle className="text-xl md:text-2xl mb-3 font-heading">{service.title}</CardTitle>
+                <CardDescription className="text-base md:text-lg text-muted-foreground">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm">
+                    <li key={idx} className="flex items-center text-base">
                       <div className="w-1.5 h-1.5 gradient-logo rounded-full mr-3"></div>
                       {feature}
                     </li>
@@ -105,9 +105,9 @@ const Services = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-            <p className="text-muted-foreground mb-6">
+          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-10 max-w-3xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 font-heading">Ready to Get Started?</h3>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
               Let's discuss how we can help bring your vision to life with our comprehensive content services.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
