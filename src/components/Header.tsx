@@ -20,6 +20,7 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
+            <a href="#home" className="nav-link">Home</a>
             <a href="#about" className="nav-link">About</a>
             <a href="#services" className="nav-link">Services</a>
             <a href="#productions" className="nav-link">Productions</a>
