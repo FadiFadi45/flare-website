@@ -7,11 +7,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-              <Play className="w-4 h-4 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-glow">Flare Media</span>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/871b753f-ac14-4513-8da8-8f974ba0ea9c.png" 
+              alt="Flare Media Logo" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Navigation */}
