@@ -1,67 +1,132 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
+import { AnimatedSection } from "@/components/animations/AnimatedSection";
+import { AnimatedText } from "@/components/animations/AnimatedText";
+import { AnimatedButton } from "@/components/animations/AnimatedButton";
+import { staggerContainer, fadeInUp, scaleIn, glowPulse } from "@/lib/animations";
 
 const Hero = () => {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset">
-      {/* Background Image */}
-      <div 
+    <section 
+      ref={heroRef}
+      id="home" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset"
+    >
+      {/* Background Image with Parallax */}
+      <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ 
+          backgroundImage: `url(${heroImage})`,
+          y 
+        }}
       >
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
-      </div>
+        <motion.div 
+          className="absolute inset-0 bg-background/60 backdrop-blur-sm"
+          style={{ opacity }}
+        ></motion.div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-secondary/50 backdrop-blur-lg rounded-full px-6 py-3 mb-8">
-            <Star className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium">Award-Winning Digital Content Studio</span>
-          </div>
+          <AnimatedSection delay={0.2}>
+            <div className="inline-flex items-center space-x-2 bg-secondary/50 backdrop-blur-lg rounded-full px-6 py-3 mb-8">
+              <Star className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium">Award-Winning Digital Content Studio</span>
+            </div>
+          </AnimatedSection>
 
-          {/* Main Headline */}
-          <h1 className="text-gradient-logo animate-glow-pulse mb-8">
-            Flare Media<br />
-            Creates Stories<br />
-            That Ignite
-          </h1>
+          {/* Main Headline with Cinematic Animation */}
+          <motion.div
+            variants={fadeInUp}
+            className="mb-8"
+          >
+            <motion.h1 
+              className="text-gradient-logo font-bold leading-none"
+              variants={glowPulse}
+              initial="initial"
+              animate="animate"
+            >
+              <AnimatedText stagger delay={0.4}>
+                Flare Media Creates Stories That Ignite
+              </AnimatedText>
+            </motion.h1>
+          </motion.div>
 
           {/* Subtitle */}
-          <p className="text-lg text-muted-foreground mb-16 max-w-3xl mx-auto">
-            Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
-          </p>
+          <AnimatedSection delay={0.8}>
+            <p className="text-lg text-muted-foreground mb-16 max-w-3xl mx-auto">
+              Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
+            </p>
+          </AnimatedSection>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gradient-logo mb-2">500M+</div>
-              <div className="text-sm text-muted-foreground font-medium">Total Views</div>
-            </div>
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gradient-logo mb-2">250+</div>
-              <div className="text-sm text-muted-foreground font-medium">Creators Managed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gradient-logo mb-2">50+</div>
-              <div className="text-sm text-muted-foreground font-medium">Original Productions</div>
-            </div>
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gradient-logo mb-2">15+</div>
-              <div className="text-sm text-muted-foreground font-medium">Platform Partners</div>
-            </div>
-          </div>
-        </div>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
+            variants={staggerContainer}
+          >
+            {[
+              { number: "500M+", label: "Total Views" },
+              { number: "250+", label: "Creators Managed" },
+              { number: "50+", label: "Original Productions" },
+              { number: "15+", label: "Platform Partners" }
+            ].map((stat, index) => (
+              <motion.div 
+                key={index}
+                className="text-center"
+                variants={scaleIn}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-6xl font-bold text-gradient-logo mb-2">{stat.number}</div>
+                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator with Animation */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: 1, 
+          y: [0, 10, 0],
+          transition: {
+            opacity: { delay: 2, duration: 0.5 },
+            y: { repeat: Infinity, duration: 2, ease: "easeInOut" }
+          }
+        }}
+      >
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+          <motion.div 
+            className="w-1 h-3 bg-primary rounded-full mt-2"
+            animate={{ 
+              y: [0, 12, 0],
+              opacity: [1, 0.3, 1]
+            }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          ></motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
