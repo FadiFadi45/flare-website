@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Target, 
@@ -20,37 +20,22 @@ import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { AnimatedButton } from "@/components/animations/AnimatedButton";
 import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/animations";
 
-const services = [
+// Core services for homepage summary
+const coreServices = [
   {
     icon: Settings,
-    title: "Services Management",
-    features: [
-      "Custom channel and video branding layouts",
-      "Full optimization of channels and videos",
-      "Advanced copyright protection",
-      "Pre-recorded livestream handling",
-      "Content monetization techniques",
-      "Multi-platform content distribution",
-      "Digital asset creation and management",
-      "Dedicated account management"
-    ]
+    title: "Content Production",
+    description: "End-to-end video production from concept to post-production for TV, film, and digital platforms."
   },
   {
     icon: TrendingUp,
-    title: "Strategy Development",
-    features: [
-      "SEO Strategy: Get discovered with optimized content",
-      "Content Strategy: Create impactful, targeted plans"
-    ]
+    title: "Channel Management", 
+    description: "Complete YouTube MCN services and multi-platform channel optimization for maximum reach."
   },
   {
     icon: BarChart3,
-    title: "Reporting & Analytics",
-    features: [
-      "In-depth performance reports for data-driven decisions",
-      "Revenue tracking and optimization",
-      "Detailed financial reports"
-    ]
+    title: "Influencer Marketing",
+    description: "Connect brands with top creators and manage comprehensive influencer campaigns."
   }
 ];
 
@@ -152,7 +137,7 @@ const About = () => {
           </Card>
         </AnimatedSection>
 
-        {/* What We Offer */}
+        {/* What We Offer - Homepage Summary */}
         <div className="mb-16">
           <AnimatedSection className="text-center mb-12">
             <AnimatedText>
@@ -162,42 +147,57 @@ const About = () => {
             </AnimatedText>
             <AnimatedText delay={0.2}>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                Our comprehensive suite of services is designed to elevate your digital presence, 
-                streamline your content operations, and open new revenue opportunities.
+                Our core services designed to elevate your digital presence and content strategy.
               </p>
             </AnimatedText>
           </AnimatedSection>
 
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {services.map((service, index) => (
+            {coreServices.map((service, index) => (
               <AnimatedCard key={index} delay={index * 0.2}>
-                <Card className="shadow-card hover:shadow-glow transition-smooth group h-full">
+                <Card className="shadow-card hover:shadow-glow transition-smooth group h-full text-center">
                   <CardHeader>
-                    <div className="w-12 h-12 gradient-logo rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
-                      <service.icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <CardTitle>{service.title}</CardTitle>
+                    <motion.div 
+                      className="w-16 h-16 gradient-logo rounded-2xl flex items-center justify-center mb-4 mx-auto"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 5,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      <service.icon className="w-8 h-8 text-primary-foreground" />
+                    </motion.div>
+                    <CardTitle className="text-xl mb-3">{service.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {service.description}
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm">
-                          <div className="w-1.5 h-1.5 gradient-logo rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
                 </Card>
               </AnimatedCard>
             ))}
           </motion.div>
+
+          {/* CTA to Services Page */}
+          <AnimatedSection className="text-center">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button variant="default" size="lg" asChild>
+                <a href="/services">
+                  <Play className="w-5 h-5 mr-2" />
+                  Explore All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </Button>
+            </motion.div>
+          </AnimatedSection>
         </div>
 
         {/* Why Choose Flare Media */}
