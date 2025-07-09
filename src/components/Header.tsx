@@ -25,16 +25,6 @@ const Header = () => {
             <a href="#contact" className="text-foreground hover:text-primary transition-smooth scroll-smooth">Contact</a>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="minimal">
-              Get Media Kit
-            </Button>
-            <Button variant="default">
-              Start Project
-            </Button>
-          </div>
-
           {/* Mobile Menu */}
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="w-5 h-5" />
