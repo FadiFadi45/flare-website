@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
                 <Play className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-glow">Flare Media</span>
+              <span className="font-bold text-glow">Flare Media</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Premium digital content production, channel management, and influencer marketing 
@@ -36,7 +36,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="mb-4">Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-primary transition-smooth">Content Production</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Channel Management</a></li>
@@ -49,7 +49,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#home" className="hover:text-primary transition-smooth">Home</a></li>
               <li><a href="#about" className="hover:text-primary transition-smooth">About Us</a></li>
@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-semibold mb-4">Stay Updated</h3>
+            <h3 className="mb-4">Stay Updated</h3>
             <p className="text-muted-foreground text-sm mb-4">
               Get the latest industry insights and behind-the-scenes content.
             </p>

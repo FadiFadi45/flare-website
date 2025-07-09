@@ -19,24 +19,29 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'display': ['Playfair Display', 'serif'],
-				'heading': ['Inter', 'system-ui', 'sans-serif'],
+				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'heading': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1.5' }],
 				'sm': ['0.875rem', { lineHeight: '1.6' }],
-				'base': ['1rem', { lineHeight: '1.7' }],
-				'lg': ['1.125rem', { lineHeight: '1.7' }],
-				'xl': ['1.25rem', { lineHeight: '1.7' }],
-				'2xl': ['1.5rem', { lineHeight: '1.6' }],
-				'3xl': ['1.875rem', { lineHeight: '1.5' }],
-				'4xl': ['2.25rem', { lineHeight: '1.4' }],
-				'5xl': ['3rem', { lineHeight: '1.2' }],
-				'6xl': ['3.75rem', { lineHeight: '1.1' }],
-				'7xl': ['4.5rem', { lineHeight: '1' }],
-				'8xl': ['6rem', { lineHeight: '1' }],
-				'9xl': ['8rem', { lineHeight: '1' }],
+				'base': ['1rem', { lineHeight: '1.7' }],        // 16px body text
+				'lg': ['1.125rem', { lineHeight: '1.7' }],      // H6
+				'xl': ['1.25rem', { lineHeight: '1.6' }],       // H5
+				'2xl': ['1.5rem', { lineHeight: '1.5' }],       // H4
+				'3xl': ['1.75rem', { lineHeight: '1.4' }],      // H3
+				'4xl': ['2rem', { lineHeight: '1.3' }],         // H2
+				'5xl': ['2.5rem', { lineHeight: '1.2' }],       // H1
+				'6xl': ['3rem', { lineHeight: '1.1' }],         // Display Large
+				'7xl': ['3.5rem', { lineHeight: '1' }],         // Display XL
+				'8xl': ['4rem', { lineHeight: '1' }],           // Display 2XL
+				'9xl': ['4.5rem', { lineHeight: '1' }],         // Display 3XL
+			},
+			spacing: {
+				'18': '4.5rem',
+				'72': '18rem',
+				'84': '21rem',
+				'96': '24rem',
 			},
 			colors: {
 				border: 'hsl(var(--border))',

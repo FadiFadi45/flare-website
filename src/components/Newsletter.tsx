@@ -20,11 +20,11 @@ const Newsletter = () => {
                     <span className="text-sm font-medium text-primary">Industry Insights</span>
                   </div>
                   
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-heading">
+                  <h2 className="mb-4">
                     Stay Ahead of the <span className="text-gradient-logo">Curve</span>
                   </h2>
                   
-                  <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed">
+                  <p className="text-muted-foreground mb-6">
                     Get exclusive insights, industry trends, behind-the-scenes content, 
                     and first access to our latest productions delivered to your inbox.
                   </p>
@@ -33,19 +33,19 @@ const Newsletter = () => {
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-base">Weekly industry insights & trends</span>
+                      <span className="text-sm">Weekly industry insights & trends</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-base">Exclusive behind-the-scenes content</span>
+                      <span className="text-sm">Exclusive behind-the-scenes content</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-base">Early access to new productions</span>
+                      <span className="text-sm">Early access to new productions</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-base">Creator success stories & tips</span>
+                      <span className="text-sm">Creator success stories & tips</span>
                     </div>
                   </div>
 
@@ -70,25 +70,25 @@ const Newsletter = () => {
                 <div className="bg-secondary/30 p-8 lg:p-12 flex flex-col justify-center">
                   <div className="space-y-8">
                      <div className="text-center">
-                       <div className="text-4xl lg:text-5xl font-bold text-gradient-logo mb-3 font-display">25,000+</div>
-                       <div className="text-base text-muted-foreground flex items-center justify-center">
-                         <Users className="w-5 h-5 mr-2" />
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">25,000+</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <Users className="w-4 h-4 mr-2" />
                          Industry Professionals
                        </div>
                      </div>
                      
                      <div className="text-center">
-                       <div className="text-4xl lg:text-5xl font-bold text-gradient-logo mb-3 font-display">98%</div>
-                       <div className="text-base text-muted-foreground flex items-center justify-center">
-                         <TrendingUp className="w-5 h-5 mr-2" />
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">98%</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <TrendingUp className="w-4 h-4 mr-2" />
                          Open Rate
                        </div>
                      </div>
                      
                      <div className="text-center">
-                       <div className="text-4xl lg:text-5xl font-bold text-gradient-logo mb-3 font-display">Weekly</div>
-                       <div className="text-base text-muted-foreground flex items-center justify-center">
-                         <Mail className="w-5 h-5 mr-2" />
+                       <div className="text-3xl font-bold text-gradient-logo mb-2">Weekly</div>
+                       <div className="text-sm text-muted-foreground flex items-center justify-center">
+                         <Mail className="w-4 h-4 mr-2" />
                          Fresh Content
                       </div>
                     </div>

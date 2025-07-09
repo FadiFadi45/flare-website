@@ -19,42 +19,38 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-secondary/50 backdrop-blur-lg rounded-full px-6 py-3 mb-8">
             <Star className="w-5 h-5 text-primary" />
-            <span className="text-base font-semibold">Award-Winning Digital Content Studio</span>
+            <span className="text-sm font-medium">Award-Winning Digital Content Studio</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-none font-display">
-            <span className="text-gradient-logo animate-glow-pulse">Flare Media</span>
-            <br />
-            <span className="text-gradient-logo">
-              Creates Stories
-            </span>
-            <br />
-            <span className="font-heading">That Ignite</span>
+          <h1 className="text-gradient-logo animate-glow-pulse mb-8">
+            Flare Media<br />
+            Creates Stories<br />
+            That Ignite
           </h1>
 
           {/* Subtitle */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-lg text-muted-foreground mb-16 max-w-3xl mx-auto">
             Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-logo mb-3 font-display">500M+</div>
-              <div className="text-base md:text-lg text-muted-foreground font-medium">Total Views</div>
+              <div className="text-6xl font-bold text-gradient-logo mb-2">500M+</div>
+              <div className="text-sm text-muted-foreground font-medium">Total Views</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-logo mb-3 font-display">250+</div>
-              <div className="text-base md:text-lg text-muted-foreground font-medium">Creators Managed</div>
+              <div className="text-6xl font-bold text-gradient-logo mb-2">250+</div>
+              <div className="text-sm text-muted-foreground font-medium">Creators Managed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-logo mb-3 font-display">50+</div>
-              <div className="text-base md:text-lg text-muted-foreground font-medium">Original Productions</div>
+              <div className="text-6xl font-bold text-gradient-logo mb-2">50+</div>
+              <div className="text-sm text-muted-foreground font-medium">Original Productions</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-logo mb-3 font-display">15+</div>
-              <div className="text-base md:text-lg text-muted-foreground font-medium">Platform Partners</div>
+              <div className="text-6xl font-bold text-gradient-logo mb-2">15+</div>
+              <div className="text-sm text-muted-foreground font-medium">Platform Partners</div>
             </div>
           </div>
         </div>

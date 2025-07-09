@@ -67,10 +67,10 @@ const Productions = () => {
             <Play className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Original Productions</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="mb-6">
             Stories That <span className="text-gradient-logo">Captivate</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto">
             From web series to documentaries, our original productions showcase compelling 
             narratives that resonate with audiences across the globe.
           </p>
@@ -101,7 +101,7 @@ const Productions = () => {
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold">{production.title}</h3>
+                  <h3 className="font-bold">{production.title}</h3>
                   <Badge variant="outline">{production.type}</Badge>
                 </div>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
@@ -135,7 +135,7 @@ const Productions = () => {
 
         {/* Past Productions */}
         <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">Past Productions</h3>
+          <h3 className="mb-6 text-center">Past Productions</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pastProductions.map((production, index) => (
               <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/20 transition-smooth">

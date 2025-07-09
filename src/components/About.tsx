@@ -53,15 +53,15 @@ const About = () => {
     <section id="about" className="py-20 bg-background scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-6 py-3 mb-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-6 py-3 mb-6">
             <Users className="w-5 h-5 text-primary" />
-            <span className="text-base font-semibold text-primary">About Us</span>
+            <span className="text-sm font-medium text-primary">About Us</span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 font-display">
-            <span className="text-gradient-logo">Flare Media LLC</span>
+          <h2 className="text-gradient-logo mb-6">
+            Flare Media LLC
           </h2>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground mb-6 font-display">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Crafting Narratives That Resonate
           </p>
         </div>
@@ -78,7 +78,7 @@ const About = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground">
                 In today's fast-paced, ever-evolving digital landscape, Flare Media LLC empowers 
                 businesses to stand out and authentically connect with their audiences through 
                 the art of storytelling.
@@ -96,7 +96,7 @@ const About = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground">
                 To become a leading catalyst of digital transformation, helping brands and 
                 creators navigate the future of content.
               </p>
@@ -108,12 +108,12 @@ const About = () => {
         <div className="mb-16">
           <Card className="gradient-card shadow-hero">
             <CardHeader>
-              <CardTitle className="text-4xl md:text-5xl font-bold mb-6 text-center font-heading">
+              <CardTitle className="text-center mb-4">
                 Who <span className="text-gradient-logo">We Are</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto">
+              <p className="text-muted-foreground max-w-4xl mx-auto">
                 At Flare Media LLC, we are your trusted partner in unlocking the full potential 
                 of digital platforms. Backed by years of expertise and a deep understanding of 
                 modern media, we specialize in helping creators, businesses, and brands thrive 
@@ -127,10 +127,10 @@ const About = () => {
         {/* What We Offer */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold mb-6 font-heading">
+            <h3 className="mb-4">
               What <span className="text-gradient-logo">We Offer</span>
             </h3>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-muted-foreground max-w-3xl mx-auto">
               Our comprehensive suite of services is designed to elevate your digital presence, 
               streamline your content operations, and open new revenue opportunities.
             </p>
@@ -143,12 +143,12 @@ const About = () => {
                   <div className="w-12 h-12 gradient-logo rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
                     <service.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-xl md:text-2xl font-heading">{service.title}</CardTitle>
+                  <CardTitle>{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-base">
+                      <li key={idx} className="flex items-start text-sm">
                         <div className="w-1.5 h-1.5 gradient-logo rounded-full mr-3 mt-2 flex-shrink-0"></div>
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
@@ -167,10 +167,10 @@ const About = () => {
               <Zap className="w-8 h-8 text-primary-foreground" />
             </div>
           </div>
-          <h3 className="text-4xl md:text-5xl font-bold mb-8 font-heading">
+          <h3 className="mb-6">
             Why Choose <span className="text-gradient-logo">Flare Media?</span>
           </h3>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-5xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-4xl mx-auto">
             We simplify the complexity of digital content so you can focus on what matters: 
             creating, growing, and succeeding. Whether you're an independent creator, a growing 
             brand, or a global company, our solutions are designed to align with your goals and 
@@ -186,7 +186,7 @@ const About = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
-          <p className="text-2xl md:text-3xl font-semibold text-gradient-logo mt-10 font-display">
+          <p className="text-xl font-semibold text-gradient-logo mt-8">
             Let us illuminate your path to digital success.
           </p>
         </div>

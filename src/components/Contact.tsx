@@ -62,10 +62,10 @@ const Contact = () => {
             <Send className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Get In Touch</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="mb-6">
             Let's Create Something <span className="text-gradient-logo">Amazing</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto">
             Ready to bring your vision to life? We'd love to hear about your project 
             and discuss how we can help you succeed.
           </p>
@@ -76,7 +76,7 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="shadow-card">
               <CardHeader>
-                <CardTitle className="text-2xl">Send us a message</CardTitle>
+                <CardTitle>Send us a message</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
