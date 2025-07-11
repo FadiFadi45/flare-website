@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-bg.jpg";
+import heroImage from "@/assets/hero-cinematic.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { AnimatedButton } from "@/components/animations/AnimatedButton";
