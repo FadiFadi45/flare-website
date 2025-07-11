@@ -118,12 +118,20 @@
 
   html {
     scroll-behavior: smooth;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased text-base;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     line-height: 1.7;
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
   
   /* Typography Hierarchy */
@@ -243,6 +251,7 @@
     scroll-margin-top: 80px; /* Account for fixed header */
   }
   
+  /* Performance optimized navigation */
   .nav-link {
     position: relative;
     padding: 0.75rem 1.25rem;
@@ -251,6 +260,8 @@
     border-radius: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform;
   }
   
   .nav-link::before {
@@ -264,6 +275,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 0.5rem;
+    will-change: opacity;
   }
   
   .nav-link:hover::before {
@@ -272,7 +284,7 @@
   
   .nav-link:hover {
     color: hsl(var(--primary));
-    transform: translateY(-1px);
+    transform: translateY(-1px) translateZ(0);
   }
   
   .nav-link::after {
@@ -285,9 +297,37 @@
     background: linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%));
     transition: all 0.3s ease;
     transform: translateX(-50%);
+    will-change: width;
   }
   
   .nav-link:hover::after {
     width: 80%;
+  }
+
+  /* Performance utility classes */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+
+  .contain-strict {
+    contain: strict;
   }
 }

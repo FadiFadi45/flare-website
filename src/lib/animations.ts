@@ -184,3 +184,38 @@ export const motionConfig = {
   transition: { type: "tween" },
   reducedMotion: "user",
 };
+
+// Optimized scroll animation settings for better performance
+export const optimizedScrollProps = {
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: { 
+    once: true, 
+    amount: 0.2,
+    margin: "-10% 0px -10% 0px" 
+  },
+  transition: {
+    staggerChildren: 0.1,
+    delayChildren: 0.05,
+  }
+};
+
+// High-performance variants for critical animations
+export const performanceVariants = {
+  fadeInFast: {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    }
+  },
+  scaleInFast: {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }
+  }
+};

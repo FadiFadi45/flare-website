@@ -24,16 +24,17 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset"
     >
-      {/* Background Image with Parallax */}
+      {/* Optimized Background Image with Parallax */}
       <motion.div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
         style={{ 
           backgroundImage: `url(${heroImage})`,
+          transform: "translateZ(0)", // Force GPU acceleration
           y 
         }}
       >
         <motion.div 
-          className="absolute inset-0 bg-background/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-background/60 backdrop-blur-sm will-change-opacity"
           style={{ opacity }}
         ></motion.div>
       </motion.div>
