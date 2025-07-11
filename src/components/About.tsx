@@ -112,21 +112,21 @@ const About = () => {
           <motion.div variants={fadeInRight}>
             <AnimatedCard delay={0.4}>
               <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
-                <div className="absolute inset-0 gradient-accent opacity-5 group-hover:opacity-10 transition-smooth" />
+                <div className="absolute inset-0 gradient-primary opacity-5 group-hover:opacity-10 transition-smooth" />
                 <div className="relative z-10 p-8 h-full flex flex-col">
                   <div className="flex items-start space-x-4 mb-6">
                     <motion.div 
-                      className="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center shadow-glow"
-                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-glow"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     >
-                      <Eye className="w-8 h-8 text-accent-foreground" />
+                      <Eye className="w-8 h-8 text-primary-foreground" />
                     </motion.div>
                     <div className="flex-1">
                       <CardTitle className="text-3xl md:text-4xl font-heading mb-2 text-gradient-logo">
                         Vision
                       </CardTitle>
-                      <div className="w-20 h-1 gradient-accent rounded-full" />
+                      <div className="w-20 h-1 gradient-primary rounded-full" />
                     </div>
                   </div>
                   <CardContent className="flex-grow flex items-center p-0">
