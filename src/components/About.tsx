@@ -81,10 +81,9 @@ const About = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    In today's fast-paced, ever-evolving digital landscape, Flare Media LLC empowers 
-                    businesses to stand out and authentically connect with their audiences through 
-                    the art of storytelling.
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    In today's fast-paced, ever-changing digital world, Flare helps businesses 
+                    stand out and authentically resonate with their audience. Storytelling business.
                   </p>
                 </CardContent>
               </Card>
@@ -103,9 +102,8 @@ const About = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    To become a leading catalyst of digital transformation, helping brands and 
-                    creators navigate the future of content.
+                  <p className="text-muted-foreground text-lg leading-relaxed font-medium">
+                    To be leading catalysts of digital transformation.
                   </p>
                 </CardContent>
               </Card>
