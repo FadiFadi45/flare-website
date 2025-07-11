@@ -126,11 +126,11 @@ const About = () => {
             <CardContent className="text-center">
               <AnimatedText delay={0.3}>
                 <p className="text-muted-foreground max-w-4xl mx-auto">
-                  At Flare Media LLC, we are your trusted partner in unlocking the full potential 
-                  of digital platforms. Backed by years of expertise and a deep understanding of 
-                  modern media, we specialize in helping creators, businesses, and brands thrive 
-                  online through tailored strategies, seamless content management, and scalable 
-                  digital solutions.
+                  At Flare Media LLC, we are your trusted partner in maximizing the potential 
+                  of digital platforms. Based on years of expertise and a deep understanding of 
+                  the evolving media landscape, we specialize in empowering creators, brands, and 
+                  businesses to thrive in the digital space through innovative strategies, 
+                  optimized management, and cutting-edge solutions.
                 </p>
               </AnimatedText>
             </CardContent>
