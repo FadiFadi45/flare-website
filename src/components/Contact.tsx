@@ -19,28 +19,28 @@ const contactMethods = [
     icon: Mail,
     title: "Email Us",
     description: "General inquiries",
-    contact: "hello@flaremedia.com",
-    action: "mailto:hello@flaremedia.com"
+    contact: "Info@flare.ae",
+    action: "mailto:Info@flare.ae"
   },
   {
     icon: Phone,
     title: "Call Us",
     description: "Business inquiries",
-    contact: "+1 (555) 123-4567",
-    action: "tel:+15551234567"
+    contact: "+971 4 433 8972",
+    action: "tel:+97144338972"
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    description: "Los Angeles HQ",
-    contact: "1234 Sunset Blvd, LA, CA 90028",
+    description: "Dubai Office",
+    contact: "UAE, Dubai, Business Bay, Empire Heights A, Floor 9, Leading Zone Business Center",
     action: "#"
   },
   {
-    icon: Clock,
-    title: "Business Hours",
-    description: "Monday - Friday",
-    contact: "9:00 AM - 6:00 PM PST",
+    icon: MapPin,
+    title: "P.O. Box",
+    description: "Postal Address",
+    contact: "PoBox 502508",
     action: "#"
   }
 ];
