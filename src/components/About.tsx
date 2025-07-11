@@ -71,8 +71,8 @@ const About = () => {
         >
           <motion.div variants={fadeInLeft}>
             <AnimatedCard delay={0.2}>
-              <Card className="shadow-card hover:shadow-glow transition-smooth h-full">
-                <CardHeader>
+              <Card className="shadow-card hover:shadow-glow transition-smooth h-full flex flex-col">
+                <CardHeader className="flex-shrink-0">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center">
                       <Target className="w-6 h-6 text-primary-foreground" />
@@ -80,7 +80,7 @@ const About = () => {
                     <CardTitle className="text-2xl md:text-3xl font-heading">Mission</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center">
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     In today's fast-paced, ever-changing digital world, Flare helps businesses 
                     stand out and authentically resonate with their audience. Storytelling business.
@@ -92,8 +92,8 @@ const About = () => {
 
           <motion.div variants={fadeInRight}>
             <AnimatedCard delay={0.4}>
-              <Card className="shadow-card hover:shadow-glow transition-smooth h-full">
-                <CardHeader>
+              <Card className="shadow-card hover:shadow-glow transition-smooth h-full flex flex-col">
+                <CardHeader className="flex-shrink-0">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center">
                       <Eye className="w-6 h-6 text-accent-foreground" />
@@ -101,7 +101,7 @@ const About = () => {
                     <CardTitle className="text-2xl md:text-3xl font-heading">Vision</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex items-center">
                   <p className="text-muted-foreground text-lg leading-relaxed font-medium">
                     To be leading catalysts of digital transformation.
                   </p>
