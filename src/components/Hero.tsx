@@ -54,13 +54,6 @@ const Hero = () => {
             </div>
           </AnimatedSection>
 
-          {/* Main Headline */}
-          <AnimatedSection delay={0.4}>
-            <h1 className="mb-6">
-              Creating <span className="text-gradient-logo">Viral Content</span><br />
-              That Converts
-            </h1>
-          </AnimatedSection>
 
           {/* Subtitle */}
           <AnimatedSection delay={0.6}>
