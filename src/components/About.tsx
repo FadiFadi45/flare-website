@@ -70,70 +70,72 @@ const About = () => {
           </AnimatedText>
         </AnimatedSection>
 
-        {/* Mission & Vision */}
+        {/* Mission & Vision Combined */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20"
+          className="flex justify-center mb-20"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div variants={fadeInLeft}>
+          <motion.div variants={fadeInLeft} className="w-full max-w-4xl">
             <AnimatedCard delay={0.2}>
               <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
                 <div className="absolute inset-0 gradient-primary opacity-5 group-hover:opacity-10 transition-smooth" />
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <motion.div 
-                      className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-glow"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    >
-                      <Target className="w-8 h-8 text-primary-foreground" />
-                    </motion.div>
-                    <div className="flex-1">
-                      <CardTitle className="text-3xl md:text-4xl font-heading mb-2 text-gradient-logo">
-                        Mission
-                      </CardTitle>
-                      <div className="w-20 h-1 gradient-primary rounded-full" />
+                <div className="relative z-10 p-8 h-full">
+                  
+                  {/* Mission Section */}
+                  <div className="mb-10">
+                    <div className="flex items-start space-x-4 mb-6">
+                      <motion.div 
+                        className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-glow"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <Target className="w-8 h-8 text-primary-foreground" />
+                      </motion.div>
+                      <div className="flex-1">
+                        <CardTitle className="text-3xl md:text-4xl font-heading mb-2 text-gradient-logo">
+                          Mission
+                        </CardTitle>
+                        <div className="w-20 h-1 gradient-primary rounded-full" />
+                      </div>
                     </div>
+                    <CardContent className="p-0">
+                      <p className="text-foreground text-lg leading-relaxed font-medium">
+                        In today's fast-paced, ever-changing digital world, Flare helps businesses 
+                        stand out and authentically resonate with their audience. Storytelling business.
+                      </p>
+                    </CardContent>
                   </div>
-                  <CardContent className="flex-grow flex items-center p-0">
-                    <p className="text-foreground text-lg leading-relaxed font-medium">
-                      In today's fast-paced, ever-changing digital world, Flare helps businesses 
-                      stand out and authentically resonate with their audience. Storytelling business.
-                    </p>
-                  </CardContent>
-                </div>
-              </Card>
-            </AnimatedCard>
-          </motion.div>
 
-          <motion.div variants={fadeInRight}>
-            <AnimatedCard delay={0.4}>
-              <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
-                <div className="absolute inset-0 gradient-primary opacity-5 group-hover:opacity-10 transition-smooth" />
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <motion.div 
-                      className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-glow"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    >
-                      <Eye className="w-8 h-8 text-primary-foreground" />
-                    </motion.div>
-                    <div className="flex-1">
-                      <CardTitle className="text-3xl md:text-4xl font-heading mb-2 text-gradient-logo">
-                        Vision
-                      </CardTitle>
-                      <div className="w-20 h-1 gradient-primary rounded-full" />
+                  {/* Divider */}
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-10" />
+
+                  {/* Vision Section */}
+                  <div>
+                    <div className="flex items-start space-x-4 mb-6">
+                      <motion.div 
+                        className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center shadow-glow"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <Eye className="w-8 h-8 text-primary-foreground" />
+                      </motion.div>
+                      <div className="flex-1">
+                        <CardTitle className="text-3xl md:text-4xl font-heading mb-2 text-gradient-logo">
+                          Vision
+                        </CardTitle>
+                        <div className="w-20 h-1 gradient-primary rounded-full" />
+                      </div>
                     </div>
+                    <CardContent className="p-0">
+                      <p className="text-foreground text-lg leading-relaxed font-medium">
+                        To be leading catalysts of digital transformation.
+                      </p>
+                    </CardContent>
                   </div>
-                  <CardContent className="flex-grow flex items-center p-0">
-                    <p className="text-foreground text-lg leading-relaxed font-medium">
-                      To be leading catalysts of digital transformation.
-                    </p>
-                  </CardContent>
+                  
                 </div>
               </Card>
             </AnimatedCard>
