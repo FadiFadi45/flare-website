@@ -151,7 +151,7 @@ const Services = () => {
               </p>
             </AnimatedText>
             <motion.div 
-              className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+              className="flex justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ 
                 opacity: 1, 
@@ -166,12 +166,6 @@ const Services = () => {
                   Explore All Services
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
-              </Button>
-              <Button variant="default" size="lg">
-                Schedule Consultation
-              </Button>
-              <Button variant="minimal" size="lg">
-                View Portfolio
               </Button>
             </motion.div>
           </div>
