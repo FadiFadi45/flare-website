@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 
 // Lazy load non-critical components
 const About = lazy(() => import("@/components/About"));
+const Channels = lazy(() => import("@/components/Channels"));
 const Services = lazy(() => import("@/components/Services"));
 const Productions = lazy(() => import("@/components/Productions"));
 const Newsletter = lazy(() => import("@/components/Newsletter"));
@@ -33,6 +34,10 @@ const Index = () => {
       
       <Suspense fallback={<SectionLoader />}>
         <Services />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Channels />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
