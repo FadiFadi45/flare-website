@@ -37,11 +37,11 @@ const Index = () => {
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
-        <Channels />
+        <Productions />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
-        <Productions />
+        <Channels />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
