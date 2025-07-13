@@ -62,31 +62,6 @@ const Hero = () => {
             </p>
           </AnimatedSection>
 
-          {/* CTA Buttons */}
-          <AnimatedSection delay={0.8}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.6 }}
-              >
-                <Button variant="hero" size="lg" className="group">
-                  <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Watch Our Work
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0, duration: 0.6 }}
-              >
-                <Button variant="minimal" size="lg">
-                  Start Your Project
-                </Button>
-              </motion.div>
-            </div>
-          </AnimatedSection>
 
           {/* Stats */}
           <motion.div 
