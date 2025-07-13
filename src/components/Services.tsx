@@ -160,6 +160,13 @@ const Services = () => {
               }}
               viewport={{ once: true }}
             >
+              <Button variant="default" size="lg" asChild>
+                <a href="/services">
+                  <Play className="w-5 h-5 mr-2" />
+                  Explore All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </Button>
               <Button variant="default" size="lg">
                 Schedule Consultation
               </Button>
