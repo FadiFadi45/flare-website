@@ -171,18 +171,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Media Kit CTA */}
-            <Card className="gradient-card shadow-card">
-              <CardContent className="p-6 text-center">
-                <h3 className="font-semibold mb-2">Need Our Media Kit?</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Download our comprehensive media kit with case studies and capabilities.
-                </p>
-                <Button variant="minimal" size="sm" className="w-full">
-                  Download Media Kit
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
