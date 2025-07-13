@@ -64,7 +64,7 @@ const About = () => {
             </h2>
           </AnimatedText>
           <AnimatedText delay={0.4}>
-            <p className="text-2xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Crafting <span className="text-gradient-logo font-semibold">Narratives</span> That Resonate
             </p>
           </AnimatedText>
@@ -93,14 +93,14 @@ const About = () => {
                       <Target className="w-10 h-10 text-primary-foreground" />
                     </motion.div>
                     <div className="flex-1">
-                      <CardTitle className="text-4xl md:text-5xl font-heading mb-4 text-gradient-logo">
+                      <CardTitle className="text-2xl font-heading mb-4 text-gradient-logo">
                         Mission
                       </CardTitle>
                       <div className="w-24 h-1 gradient-primary rounded-full" />
                     </div>
                   </div>
                   <CardContent className="p-0">
-                    <p className="text-foreground text-xl leading-relaxed font-medium">
+                    <p className="text-foreground leading-relaxed">
                       In today's fast-paced, ever-changing digital world, Flare helps businesses 
                       stand out and authentically resonate with their audience. We are in the 
                       storytelling business, crafting narratives that captivate and convert.
@@ -126,14 +126,14 @@ const About = () => {
                       <Eye className="w-10 h-10 text-accent-foreground" />
                     </motion.div>
                     <div className="flex-1">
-                      <CardTitle className="text-4xl md:text-5xl font-heading mb-4 text-gradient-logo">
+                      <CardTitle className="text-2xl font-heading mb-4 text-gradient-logo">
                         Vision
                       </CardTitle>
                       <div className="w-24 h-1 gradient-accent rounded-full" />
                     </div>
                   </div>
                   <CardContent className="p-0">
-                    <p className="text-foreground text-xl leading-relaxed font-medium">
+                    <p className="text-foreground leading-relaxed">
                       To be the leading catalysts of digital transformation, empowering creators 
                       and brands to reach their full potential through innovative media solutions 
                       and strategic storytelling.
@@ -171,7 +171,7 @@ const About = () => {
                 
                 <AnimatedText delay={0.3}>
                   <div className="max-w-5xl mx-auto">
-                    <p className="text-foreground text-xl leading-relaxed font-medium text-center mb-8">
+                    <p className="text-foreground leading-relaxed text-center mb-8">
                       At <span className="text-gradient-logo font-semibold">Flare Media LLC</span>, we are your trusted partner in maximizing the potential 
                       of digital platforms. Based on years of expertise and a deep understanding of 
                       the evolving media landscape, we specialize in empowering creators, brands, and 
@@ -249,7 +249,7 @@ const About = () => {
               </Button>
             </motion.div>
             <AnimatedText delay={0.6}>
-              <p className="text-xl font-semibold text-gradient-logo mt-8">
+              <p className="text-lg font-semibold text-gradient-logo mt-8">
                 Let us illuminate your path to digital success.
               </p>
             </AnimatedText>
