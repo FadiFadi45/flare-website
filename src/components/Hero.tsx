@@ -55,22 +55,6 @@ const Hero = () => {
             </div>
           </AnimatedSection>
 
-          {/* Main Headline with Cinematic Animation */}
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8"
-          >
-            <motion.h1 
-              className="text-gradient-logo font-bold leading-none"
-              variants={glowPulse}
-              initial="initial"
-              animate="animate"
-            >
-              <AnimatedText stagger delay={0.4}>
-                Flare Media Creates Stories That Ignite
-              </AnimatedText>
-            </motion.h1>
-          </motion.div>
 
           {/* Subtitle */}
           <AnimatedSection delay={0.8}>
