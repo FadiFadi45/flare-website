@@ -63,31 +63,6 @@ const Hero = () => {
           </AnimatedSection>
 
 
-          {/* Stats */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            {[
-              { number: "500M+", label: "Total Views" },
-              { number: "250+", label: "Creators Managed" },
-              { number: "50+", label: "Original Productions" },
-              { number: "15+", label: "Platform Partners" }
-            ].map((stat, index) => (
-              <motion.div 
-                key={index}
-                className="text-center"
-                variants={scaleIn}
-                custom={index}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-4xl lg:text-6xl font-bold text-gradient-logo mb-2">{stat.number}</div>
-                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
 
