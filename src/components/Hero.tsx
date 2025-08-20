@@ -49,25 +49,6 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Professional Headline */}
-          <AnimatedSection delay={0.2}>
-            <motion.h1 
-              className="text-6xl lg:text-8xl font-bold mb-8 text-gradient-logo leading-tight text-glow"
-              whileHover={{ scale: 1.02 }}
-            >
-              Premium Digital Studio
-            </motion.h1>
-          </AnimatedSection>
-
-          {/* Clear Value Proposition */}
-          <AnimatedSection delay={0.4}>
-            <h2 className="text-2xl lg:text-3xl font-medium text-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              Crafting exceptional digital experiences through strategic content creation, 
-              <span className="text-gradient-primary font-semibold"> innovative video production</span>, and 
-              <span className="text-gradient-secondary font-semibold"> comprehensive channel management</span>
-            </h2>
-          </AnimatedSection>
-
           {/* Professional Services Overview */}
           <AnimatedSection delay={0.6}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
