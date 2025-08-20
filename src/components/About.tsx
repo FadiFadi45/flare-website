@@ -41,7 +41,7 @@ const coreServices = [
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden scroll-offset">
+    <section id="about" className="py-20 bg-background relative overflow-hidden scroll-offset">
       {/* Background Elements */}
       <div className="absolute inset-0 gradient-hero opacity-50" />
       <div className="absolute top-1/4 right-0 w-96 h-96 gradient-primary rounded-full blur-3xl opacity-10" />

@@ -63,7 +63,7 @@ const channels = [
 
 const Channels = () => {
   return (
-    <section id="channels" className="py-24 bg-muted/30">
+    <section id="channels" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}

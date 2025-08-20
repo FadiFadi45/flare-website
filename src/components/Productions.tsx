@@ -59,7 +59,7 @@ const pastProductions = [
 
 const Productions = () => {
   return (
-    <section id="productions" className="py-20 bg-secondary/20 scroll-offset">
+    <section id="productions" className="py-20 bg-background scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
