@@ -36,8 +36,9 @@ const Hero = () => {
           className="absolute inset-0 bg-background/50 backdrop-blur-[2px] will-change-opacity"
           style={{ opacity }}
         ></motion.div>
-        {/* Dynamic gradient overlay */}
-        <div className="absolute inset-0 gradient-fresh opacity-60"></div>
+        {/* Professional brand gradient overlay */}
+        <div className="absolute inset-0 gradient-hero opacity-80"></div>
+        <div className="absolute inset-0 gradient-fresh opacity-40"></div>
       </motion.div>
 
       {/* Content with Professional Messaging */}
@@ -51,66 +52,74 @@ const Hero = () => {
           {/* Professional Headline */}
           <AnimatedSection delay={0.2}>
             <motion.h1 
-              className="text-6xl lg:text-7xl font-bold mb-6 text-gradient-logo leading-tight"
+              className="text-6xl lg:text-8xl font-bold mb-8 text-gradient-logo leading-tight text-glow"
               whileHover={{ scale: 1.02 }}
             >
-              Premium Digital Content Studio
+              Premium Digital Studio
             </motion.h1>
           </AnimatedSection>
 
           {/* Clear Value Proposition */}
           <AnimatedSection delay={0.4}>
-            <h2 className="text-2xl lg:text-3xl font-medium text-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-              Transforming brands through strategic content creation, professional video production, and comprehensive digital channel management
+            <h2 className="text-2xl lg:text-3xl font-medium text-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+              Crafting exceptional digital experiences through strategic content creation, 
+              <span className="text-gradient-primary font-semibold"> innovative video production</span>, and 
+              <span className="text-gradient-secondary font-semibold"> comprehensive channel management</span>
             </h2>
           </AnimatedSection>
 
           {/* Professional Services Overview */}
           <AnimatedSection delay={0.6}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
               <motion.div 
-                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-card border border-primary/10 relative overflow-hidden"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
-                  transition: { type: "spring", stiffness: 400 }
+                  transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Play className="w-6 h-6 text-primary" />
+                <div className="absolute inset-0 gradient-primary opacity-5"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-glow">
+                    <Play className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-xl mb-4 text-gradient-primary">Video Production</h3>
+                  <p className="text-muted-foreground">Premium content creation for TV, film, and digital platforms with cinematic quality</p>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Video Production</h3>
-                <p className="text-muted-foreground text-sm">Premium content creation for TV, film, and digital platforms</p>
               </motion.div>
               
               <motion.div 
-                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-secondary border border-secondary/10 relative overflow-hidden"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
-                  transition: { type: "spring", stiffness: 400 }
+                  transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <ArrowRight className="w-6 h-6 text-primary" />
+                <div className="absolute inset-0 gradient-secondary opacity-5"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 gradient-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-secondary">
+                    <ArrowRight className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-xl mb-4 text-gradient-secondary">Channel Management</h3>
+                  <p className="text-muted-foreground">Strategic management across all digital and social platforms for maximum engagement</p>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Channel Management</h3>
-                <p className="text-muted-foreground text-sm">Strategic management across all digital and social platforms</p>
               </motion.div>
               
               <motion.div 
-                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-accent border border-accent/10 relative overflow-hidden"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
-                  transition: { type: "spring", stiffness: 400 }
+                  transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Star className="w-6 h-6 text-primary" />
+                <div className="absolute inset-0 gradient-accent opacity-5"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-accent">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-xl mb-4 text-gradient-logo">Talent Management</h3>
+                  <p className="text-muted-foreground">Professional influencer and creator partnership programs with proven results</p>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Talent Management</h3>
-                <p className="text-muted-foreground text-sm">Professional influencer and creator partnership programs</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -132,12 +141,12 @@ const Hero = () => {
         }}
         whileHover={{ scale: 1.1 }}
       >
-        <div className="w-6 h-10 border-2 border-primary/60 rounded-full flex justify-center shadow-soft backdrop-blur-sm bg-background/10">
+        <div className="w-6 h-10 border-2 border-gradient-primary rounded-full flex justify-center shadow-glow backdrop-blur-sm bg-background/20">
           <motion.div 
-            className="w-1 h-3 bg-primary rounded-full mt-2"
+            className="w-1 h-3 gradient-primary rounded-full mt-2 shadow-glow"
             animate={{ 
               y: [0, 14, 0],
-              opacity: [1, 0.4, 1],
+              opacity: [1, 0.6, 1],
               scale: [1, 0.8, 1]
             }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
