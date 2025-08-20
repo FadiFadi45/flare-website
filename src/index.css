@@ -6,56 +6,56 @@
 
 @layer base {
   :root {
-    /* Modern Professional Base Colors */
-    --background: 210 20% 4%;      /* Deep professional background */
+    /* Cinematic Dark Background - Independent of brand colors */
+    --background: 220 15% 8%;      /* Dark cinematic blue-gray */
     --foreground: 0 0% 100%;       /* Pure white text */
 
-    --card: 210 15% 8%;            /* Professional card background */
+    --card: 220 15% 12%;           /* Slightly lighter cinematic background */
     --card-foreground: 0 0% 100%;
 
-    --popover: 210 15% 8%;
+    --popover: 220 15% 12%;
     --popover-foreground: 0 0% 100%;
 
-    /* Brand Color System - Electric Purple, RISD Blue, Majorelle Blue */
-    --primary: 279 78% 58%;        /* Electric Purple #AF42E8 */
+    /* Softened Modern Brand Palette */
+    --primary: 295 65% 65%;        /* Softened Pink #E374E8 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 279 78% 75%;   /* Lighter Electric Purple for glow */
+    --primary-glow: 295 65% 75%;   /* Lighter softened pink for glow */
 
-    --secondary: 237 77% 62%;      /* RISD Blue #5259E9 */
+    --secondary: 277 87% 60%;      /* Medium Purple #AC44F2 */
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 237 77% 75%; /* Lighter RISD Blue for glow */
+    --secondary-glow: 277 87% 75%; /* Lighter medium purple for glow */
 
-    --accent: 244 78% 59%;         /* Majorelle Blue #4F45E8 */
+    --accent: 242 87% 60%;         /* Dark Blue #4A44F2 */
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 244 78% 75%;    /* Lighter Majorelle Blue for glow */
+    --accent-glow: 242 87% 75%;    /* Lighter dark blue for glow */
 
-    --muted: 210 15% 15%;          /* Professional muted background */
-    --muted-foreground: 210 15% 80%; /* High contrast muted text */
+    --muted: 0 0% 95%;             /* Light Gray #F2F2F2 */
+    --muted-foreground: 220 15% 25%; /* Dark text on light gray */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 20%;         /* Professional borders */
-    --input: 210 15% 15%;          /* Professional inputs */
-    --ring: 279 78% 58%;           /* Electric Purple focus ring */
+    --border: 220 15% 20%;         /* Cinematic borders */
+    --input: 220 15% 15%;          /* Cinematic inputs */
+    --ring: 295 65% 65%;           /* Softened pink focus ring */
 
-    /* Professional Brand Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 20% 4%), hsl(279 78% 58% / 0.1), hsl(237 77% 62% / 0.05));
-    --gradient-primary: linear-gradient(135deg, hsl(279 78% 58%), hsl(237 77% 62%));
-    --gradient-secondary: linear-gradient(135deg, hsl(237 77% 62%), hsl(244 78% 59%));
-    --gradient-accent: linear-gradient(135deg, hsl(244 78% 59%), hsl(279 78% 58%));
-    --gradient-card: linear-gradient(135deg, hsl(210 15% 8%), hsl(279 78% 58% / 0.05));
-    --gradient-logo: linear-gradient(135deg, hsl(279 78% 58%), hsl(237 77% 62%), hsl(244 78% 59%));
-    --gradient-fresh: linear-gradient(135deg, hsl(279 78% 58% / 0.1), hsl(237 77% 62% / 0.08), hsl(244 78% 59% / 0.06));
-    --gradient-rainbow: linear-gradient(135deg, hsl(279 78% 58%), hsl(237 77% 62%), hsl(244 78% 59%), hsl(279 78% 58%));
+    /* Modern Softened Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%), hsl(295 65% 65% / 0.1), hsl(277 87% 60% / 0.08));
+    --gradient-primary: linear-gradient(135deg, hsl(295 65% 65%), hsl(277 87% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(277 87% 60%), hsl(242 87% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(242 87% 60%), hsl(295 65% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 12%), hsl(295 65% 65% / 0.05));
+    --gradient-logo: linear-gradient(135deg, hsl(295 65% 65%), hsl(277 87% 60%), hsl(242 87% 60%));
+    --gradient-fresh: linear-gradient(135deg, hsl(295 65% 65% / 0.1), hsl(277 87% 60% / 0.08), hsl(242 87% 60% / 0.06));
+    --gradient-rainbow: linear-gradient(135deg, hsl(295 65% 65%), hsl(277 87% 60%), hsl(242 87% 60%), hsl(295 65% 65%));
 
-    /* Professional Brand Shadows */
-    --shadow-glow: 0 0 40px hsl(279 78% 58% / 0.4);
-    --shadow-card: 0 8px 25px -8px hsl(279 78% 58% / 0.25);
-    --shadow-hero: 0 20px 40px -12px hsl(279 78% 58% / 0.3);
-    --shadow-soft: 0 4px 20px -4px hsl(210 15% 0% / 0.4);
-    --shadow-secondary: 0 8px 25px -8px hsl(237 77% 62% / 0.25);
-    --shadow-accent: 0 8px 25px -8px hsl(244 78% 59% / 0.25);
+    /* Softened Brand Shadows */
+    --shadow-glow: 0 0 30px hsl(295 65% 65% / 0.3);
+    --shadow-card: 0 8px 25px -8px hsl(295 65% 65% / 0.2);
+    --shadow-hero: 0 20px 40px -12px hsl(295 65% 65% / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(220 15% 0% / 0.4);
+    --shadow-secondary: 0 8px 25px -8px hsl(277 87% 60% / 0.2);
+    --shadow-accent: 0 8px 25px -8px hsl(242 87% 60% / 0.2);
 
     /* Enhanced Dynamic Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -264,7 +264,7 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 25px hsl(279 78% 58% / 0.6);
+    text-shadow: 0 0 25px hsl(295 65% 65% / 0.5);
   }
   
   .text-gradient-logo {
