@@ -16,38 +16,38 @@
     --popover: 220 13% 10%;
     --popover-foreground: 210 20% 95%;
 
-    /* Flare Brand Colors - Based on Logo */
-    --primary: 318 69% 55%;        /* #dc3daa - Flare Magenta */
-    --primary-foreground: 220 13% 8%;
-    --primary-glow: 318 69% 65%;   /* Lighter magenta for effects */
+    /* Refined Brand Colors - Professional & Balanced */
+    --primary: 318 45% 52%;        /* Softer magenta - less intense */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 318 35% 65%;   /* Subtle glow effect */
 
-    --secondary: 220 13% 15%;      /* Dark card background */
+    --secondary: 210 15% 18%;      /* Warmer neutral background */
     --secondary-foreground: 210 20% 95%;
 
-    --muted: 220 13% 12%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 210 12% 16%;          /* Refined neutral */
+    --muted-foreground: 210 12% 68%;
 
-    --accent: 267 83% 43%;         /* #7712c8 - Flare Purple */
-    --accent-foreground: 210 20% 95%;
+    --accent: 267 55% 48%;         /* Balanced purple accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 20% 95%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 15%;
-    --ring: 318 69% 55%;
+    --border: 210 10% 22%;         /* Softer neutral border */
+    --input: 210 12% 16%;          /* Consistent with muted */
+    --ring: 318 45% 52%;           /* Match refined primary */
 
-    /* Flare Logo Gradients - Matching the Brand */
-    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(267 83% 43% / 0.1));
-    --gradient-primary: linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%));
-    --gradient-accent: linear-gradient(135deg, hsl(267 83% 43%), hsl(318 69% 55%));
-    --gradient-card: linear-gradient(135deg, hsl(220 13% 10%), hsl(267 83% 43% / 0.05));
-    --gradient-logo: linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%));
+    /* Refined Brand Gradients - Professional & Balanced */
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(267 55% 48% / 0.08));
+    --gradient-primary: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
+    --gradient-accent: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 45% 52%));
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 10%), hsl(267 55% 48% / 0.03));
+    --gradient-logo: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
 
-    /* Enhanced Flare Brand Shadows */
-    --shadow-glow: 0 0 40px hsl(318 69% 55% / 0.4);
-    --shadow-card: 0 10px 30px -10px hsl(318 69% 55% / 0.2);
-    --shadow-hero: 0 25px 50px -12px hsl(267 83% 43% / 0.3);
+    /* Refined Professional Shadows */
+    --shadow-glow: 0 0 30px hsl(318 45% 52% / 0.25);
+    --shadow-card: 0 8px 25px -8px hsl(318 45% 52% / 0.15);
+    --shadow-hero: 0 20px 40px -12px hsl(267 55% 48% / 0.2);
 
     /* Animation Variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -227,11 +227,11 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 20px hsl(318 69% 55% / 0.5);
+    text-shadow: 0 0 15px hsl(318 45% 52% / 0.4);
   }
   
   .text-gradient-logo {
-    background: linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%));
+    background: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -240,7 +240,7 @@
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
-                linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%)) border-box;
+                linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%)) border-box;
   }
   
   .scroll-smooth {
@@ -271,7 +271,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsl(318 69% 55% / 0.1), hsl(267 83% 43% / 0.1));
+    background: linear-gradient(135deg, hsl(318 45% 52% / 0.08), hsl(267 55% 48% / 0.08));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 0.5rem;
@@ -294,7 +294,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, hsl(318 69% 55%), hsl(267 83% 43%));
+    background: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
     transition: all 0.3s ease;
     transform: translateX(-50%);
     will-change: width;
