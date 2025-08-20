@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-cinematic-new.jpg";
+import heroImage from "@/assets/hero-professional-studio.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
@@ -40,21 +40,105 @@ const Hero = () => {
         <div className="absolute inset-0 gradient-fresh opacity-60"></div>
       </motion.div>
 
-      {/* Content */}
+      {/* Content with Professional Messaging */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.div 
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          {/* Subtitle */}
-          <AnimatedSection delay={0.6}>
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
-            </p>
+          {/* Professional Headline */}
+          <AnimatedSection delay={0.2}>
+            <motion.h1 
+              className="text-6xl lg:text-7xl font-bold mb-6 text-gradient-logo leading-tight"
+              whileHover={{ scale: 1.02 }}
+            >
+              Premium Digital Content Studio
+            </motion.h1>
           </AnimatedSection>
 
+          {/* Clear Value Proposition */}
+          <AnimatedSection delay={0.4}>
+            <h2 className="text-2xl lg:text-3xl font-medium text-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+              Transforming brands through strategic content creation, professional video production, and comprehensive digital channel management
+            </h2>
+          </AnimatedSection>
+
+          {/* Professional Services Overview */}
+          <AnimatedSection delay={0.6}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+              <motion.div 
+                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
+                  transition: { type: "spring", stiffness: 400 }
+                }}
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Play className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Video Production</h3>
+                <p className="text-muted-foreground text-sm">Premium content creation for TV, film, and digital platforms</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
+                  transition: { type: "spring", stiffness: 400 }
+                }}
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <ArrowRight className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Channel Management</h3>
+                <p className="text-muted-foreground text-sm">Strategic management across all digital and social platforms</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-secondary/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-border/20"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 30px -10px hsl(267 65% 55% / 0.3)",
+                  transition: { type: "spring", stiffness: 400 }
+                }}
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Star className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Talent Management</h3>
+                <p className="text-muted-foreground text-sm">Professional influencer and creator partnership programs</p>
+              </motion.div>
+            </div>
+          </AnimatedSection>
+
+          {/* Professional CTA */}
+          <AnimatedSection delay={0.8}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 shadow-glow hover:shadow-hero transition-spring"
+                >
+                  Start Your Project
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-lg px-8 py-6 border-2 hover:bg-primary/10 transition-spring"
+                >
+                  View Our Work
+                  <Play className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
+            </div>
+          </AnimatedSection>
 
         </motion.div>
       </div>
