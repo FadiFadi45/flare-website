@@ -115,31 +115,6 @@ const Hero = () => {
             </div>
           </AnimatedSection>
 
-          {/* Professional CTA */}
-          <AnimatedSection delay={0.8}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 py-6 shadow-glow hover:shadow-hero transition-spring"
-                >
-                  Start Your Project
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg px-8 py-6 border-2 hover:bg-primary/10 transition-spring"
-                >
-                  View Our Work
-                  <Play className="ml-2 w-5 h-5" />
-                </Button>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-
         </motion.div>
       </div>
 
