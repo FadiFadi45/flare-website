@@ -63,7 +63,7 @@ const Productions = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+          <div className="inline-flex items-center space-x-2 bg-muted/20 rounded-full px-4 py-2 mb-6">
             <Play className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Original Productions</span>
           </div>
@@ -138,7 +138,7 @@ const Productions = () => {
           <h3 className="mb-6 text-center">Past Productions</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pastProductions.map((production, index) => (
-              <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/20 transition-smooth">
+              <div key={index} className="text-center p-4 rounded-lg hover:bg-muted/10 transition-smooth">
                 <h4 className="font-semibold mb-2">{production.title}</h4>
                 <Badge variant="outline" className="mb-2">{production.type}</Badge>
                 <div className="text-sm text-muted-foreground space-y-1">

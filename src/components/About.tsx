@@ -51,7 +51,7 @@ const About = () => {
         {/* Header */}
         <AnimatedSection className="text-center mb-20">
           <motion.div 
-            className="inline-flex items-center space-x-3 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm border border-primary/20 rounded-full px-8 py-4 mb-8"
+            className="inline-flex items-center space-x-3 bg-muted/20 backdrop-blur-sm border border-muted/30 rounded-full px-8 py-4 mb-8"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
@@ -180,15 +180,15 @@ const About = () => {
                     </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                      <div className="text-center p-6 rounded-xl bg-primary/5 border border-primary/10">
+                      <div className="text-center p-6 rounded-xl bg-muted/10 border border-muted/20">
                         <div className="text-3xl font-bold text-gradient-logo mb-2">10+</div>
                         <div className="text-sm text-muted-foreground">Years Experience</div>
                       </div>
-                      <div className="text-center p-6 rounded-xl bg-accent/5 border border-accent/10">
+                      <div className="text-center p-6 rounded-xl bg-muted/10 border border-muted/20">
                         <div className="text-3xl font-bold text-gradient-logo mb-2">500+</div>
                         <div className="text-sm text-muted-foreground">Projects Delivered</div>
                       </div>
-                      <div className="text-center p-6 rounded-xl bg-primary/5 border border-primary/10">
+                      <div className="text-center p-6 rounded-xl bg-muted/10 border border-muted/20">
                         <div className="text-3xl font-bold text-gradient-logo mb-2">100%</div>
                         <div className="text-sm text-muted-foreground">Client Satisfaction</div>
                       </div>
@@ -203,7 +203,7 @@ const About = () => {
 
         {/* Why Choose Flare Media */}
         <AnimatedSection>
-          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-8 lg:p-12 text-center">
+          <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-8 lg:p-12 text-center">
             <div className="flex items-center justify-center mb-6">
               <motion.div 
                 className="w-16 h-16 gradient-logo rounded-2xl flex items-center justify-center"
