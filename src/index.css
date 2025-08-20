@@ -6,52 +6,55 @@
 
 @layer base {
   :root {
-    /* Cinematic Dark Base */
-    --background: 220 13% 8%;
-    --foreground: 210 20% 95%;
+    /* Light & Dynamic Base Colors */
+    --background: 210 20% 6%;      /* Slightly lighter background */
+    --foreground: 210 25% 98%;     /* Brighter text */
 
-    --card: 220 13% 10%;
-    --card-foreground: 210 20% 95%;
+    --card: 210 15% 12%;           /* Lighter cards */
+    --card-foreground: 210 25% 96%;
 
-    --popover: 220 13% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 210 15% 12%;
+    --popover-foreground: 210 25% 96%;
 
-    /* Professional Purple-First Brand Colors */
-    --primary: 267 55% 48%;        /* Purple as primary - professional */
+    /* Fresh Purple-First Brand Colors */
+    --primary: 267 65% 55%;        /* Brighter, more vibrant purple */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 267 45% 58%;   /* Lighter purple for effects */
+    --primary-glow: 267 55% 68%;   /* Lighter purple for glow effects */
 
-    --secondary: 210 15% 18%;      /* Warmer neutral background */
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 210 18% 22%;      /* Much lighter secondary */
+    --secondary-foreground: 210 25% 96%;
 
-    --muted: 210 12% 16%;          /* Refined neutral */
-    --muted-foreground: 210 12% 68%;
+    --muted: 210 15% 20%;          /* Lighter muted background */
+    --muted-foreground: 210 15% 75%; /* Higher contrast text */
 
-    --accent: 318 25% 55%;         /* Pink as subtle accent only */
-    --accent-foreground: 0 0% 100%;
+    --accent: 318 15% 65%;         /* Very subtle pink accent */
+    --accent-foreground: 210 20% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 20% 95%;
 
-    --border: 210 10% 22%;         /* Softer neutral border */
-    --input: 210 12% 16%;          /* Consistent with muted */
-    --ring: 267 55% 48%;           /* Match purple primary */
+    --border: 210 12% 28%;         /* Much lighter borders */
+    --input: 210 15% 20%;          /* Lighter inputs */
+    --ring: 267 65% 55%;           /* Match vibrant primary */
 
-    /* Purple-First Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(267 55% 48% / 0.08));
-    --gradient-primary: linear-gradient(135deg, hsl(267 55% 48%), hsl(267 45% 58%));
-    --gradient-accent: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
-    --gradient-card: linear-gradient(135deg, hsl(220 13% 10%), hsl(267 55% 48% / 0.03));
-    --gradient-logo: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
+    /* Dynamic & Fresh Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%), hsl(267 65% 55% / 0.12));
+    --gradient-primary: linear-gradient(135deg, hsl(267 65% 55%), hsl(267 55% 68%));
+    --gradient-accent: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(210 15% 12%), hsl(267 65% 55% / 0.08));
+    --gradient-logo: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
+    --gradient-fresh: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 15% 65% / 0.05));
 
-    /* Purple-Focused Professional Shadows */
-    --shadow-glow: 0 0 30px hsl(267 55% 48% / 0.25);
-    --shadow-card: 0 8px 25px -8px hsl(267 55% 48% / 0.15);
-    --shadow-hero: 0 20px 40px -12px hsl(267 55% 48% / 0.2);
+    /* Vibrant & Dynamic Shadows */
+    --shadow-glow: 0 0 35px hsl(267 65% 55% / 0.3);
+    --shadow-card: 0 6px 20px -6px hsl(267 65% 55% / 0.2);
+    --shadow-hero: 0 15px 35px -10px hsl(267 65% 55% / 0.25);
+    --shadow-soft: 0 4px 15px -4px hsl(210 15% 0% / 0.3);
 
-    /* Animation Variables */
+    /* Enhanced Dynamic Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.75rem;
 
@@ -226,12 +229,24 @@
     transition: var(--transition-bounce);
   }
   
+  .gradient-fresh {
+    background: var(--gradient-fresh);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+  
   .text-glow {
-    text-shadow: 0 0 15px hsl(267 55% 48% / 0.4);
+    text-shadow: 0 0 20px hsl(267 65% 55% / 0.5);
   }
   
   .text-gradient-logo {
-    background: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
+    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -240,7 +255,7 @@
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
-                linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%)) border-box;
+                linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%)) border-box;
   }
   
   .scroll-smooth {
@@ -271,7 +286,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsl(267 55% 48% / 0.08), hsl(318 25% 55% / 0.05));
+    background: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 15% 65% / 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 0.5rem;
@@ -294,7 +309,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
+    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
     transition: all 0.3s ease;
     transform: translateX(-50%);
     will-change: width;
