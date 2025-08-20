@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-				'heading': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				'heading': ['Poppins', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1.5' }],
@@ -50,7 +50,7 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))', // Softened Pink #E374E8
+					DEFAULT: 'hsl(var(--primary))', // Softened Pink #D47BB8
 					foreground: 'hsl(var(--primary-foreground))',
 					glow: 'hsl(var(--primary-glow))'
 				},
@@ -68,7 +68,7 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))', // Dark Blue #4A44F2
+					DEFAULT: 'hsl(var(--accent))', // Dark Blue #4F45E8/#4E4BA6
 					foreground: 'hsl(var(--accent-foreground))',
 					glow: 'hsl(var(--accent-glow))'
 				},

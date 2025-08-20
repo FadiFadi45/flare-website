@@ -21,9 +21,9 @@ const Hero = () => {
     <section 
       ref={heroRef}
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset bg-background"
     >
-      {/* Lighter, More Dynamic Background with Parallax */}
+      {/* Light, Modern Background with Subtle Gradient */}
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
         style={{ 
@@ -33,15 +33,15 @@ const Hero = () => {
         }}
       >
         <motion.div 
-          className="absolute inset-0 bg-background/50 backdrop-blur-[2px] will-change-opacity"
+          className="absolute inset-0 bg-background/90 backdrop-blur-[1px] will-change-opacity"
           style={{ opacity }}
         ></motion.div>
-        {/* Professional brand gradient overlay */}
-        <div className="absolute inset-0 gradient-hero opacity-80"></div>
-        <div className="absolute inset-0 gradient-fresh opacity-40"></div>
+        {/* Gentle brand gradient overlay */}
+        <div className="absolute inset-0 gradient-hero opacity-60"></div>
+        <div className="absolute inset-0 gradient-fresh opacity-30"></div>
       </motion.div>
 
-      {/* Content with Professional Messaging */}
+      {/* Content with Modern, Clean Messaging */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.div 
           className="max-w-5xl mx-auto"
@@ -49,57 +49,57 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Professional Services Overview */}
+          {/* Modern Services Overview */}
           <AnimatedSection delay={0.6}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
               <motion.div 
-                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-card border border-primary/10 relative overflow-hidden"
+                className="bg-card/80 backdrop-blur-md rounded-2xl p-8 shadow-card border border-border hover:shadow-hero transition-all duration-300 relative overflow-hidden"
                 whileHover={{ 
-                  scale: 1.05,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="absolute inset-0 gradient-primary opacity-5"></div>
+                <div className="absolute inset-0 gradient-primary opacity-[0.02]"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-glow">
                     <Play className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-xl mb-4 text-gradient-primary">Video Production</h3>
-                  <p className="text-muted-foreground">Premium content creation for TV, film, and digital platforms with cinematic quality</p>
+                  <h3 className="font-heading font-semibold text-xl mb-4 text-gradient-primary">Video Production</h3>
+                  <p className="text-muted-foreground leading-relaxed">Premium content creation for TV, film, and digital platforms with cinematic quality</p>
                 </div>
               </motion.div>
               
               <motion.div 
-                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-secondary border border-secondary/10 relative overflow-hidden"
+                className="bg-card/80 backdrop-blur-md rounded-2xl p-8 shadow-card border border-border hover:shadow-secondary transition-all duration-300 relative overflow-hidden"
                 whileHover={{ 
-                  scale: 1.05,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="absolute inset-0 gradient-secondary opacity-5"></div>
+                <div className="absolute inset-0 gradient-secondary opacity-[0.02]"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 gradient-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-secondary">
                     <ArrowRight className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-xl mb-4 text-gradient-secondary">Channel Management</h3>
-                  <p className="text-muted-foreground">Strategic management across all digital and social platforms for maximum engagement</p>
+                  <h3 className="font-heading font-semibold text-xl mb-4 text-gradient-secondary">Channel Management</h3>
+                  <p className="text-muted-foreground leading-relaxed">Strategic management across all digital and social platforms for maximum engagement</p>
                 </div>
               </motion.div>
               
               <motion.div 
-                className="gradient-card backdrop-blur-md rounded-2xl p-8 shadow-accent border border-accent/10 relative overflow-hidden"
+                className="bg-card/80 backdrop-blur-md rounded-2xl p-8 shadow-card border border-border hover:shadow-accent transition-all duration-300 relative overflow-hidden"
                 whileHover={{ 
-                  scale: 1.05,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
               >
-                <div className="absolute inset-0 gradient-accent opacity-5"></div>
+                <div className="absolute inset-0 gradient-accent opacity-[0.02]"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-accent">
                     <Star className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-xl mb-4 text-gradient-logo">Talent Management</h3>
-                  <p className="text-muted-foreground">Professional influencer and creator partnership programs with proven results</p>
+                  <h3 className="font-heading font-semibold text-xl mb-4 text-gradient-logo">Talent Management</h3>
+                  <p className="text-muted-foreground leading-relaxed">Professional influencer and creator partnership programs with proven results</p>
                 </div>
               </motion.div>
             </div>
@@ -108,7 +108,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
+      {/* Modern Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -122,9 +122,9 @@ const Hero = () => {
         }}
         whileHover={{ scale: 1.1 }}
       >
-        <div className="w-6 h-10 border-2 border-gradient-primary rounded-full flex justify-center shadow-glow backdrop-blur-sm bg-background/20">
+        <div className="w-6 h-10 border-2 border-primary/60 rounded-full flex justify-center shadow-soft backdrop-blur-sm bg-card/60">
           <motion.div 
-            className="w-1 h-3 gradient-primary rounded-full mt-2 shadow-glow"
+            className="w-1 h-3 bg-primary rounded-full mt-2 shadow-glow"
             animate={{ 
               y: [0, 14, 0],
               opacity: [1, 0.6, 1],
