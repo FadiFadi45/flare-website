@@ -54,11 +54,11 @@ const socialLinks = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-background scroll-offset">
+    <section id="contact" className="py-20 bg-secondary/20 scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-muted/20 rounded-full px-4 py-2 mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
             <Send className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Get In Touch</span>
           </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                 <Card key={index} className="shadow-card hover:shadow-glow transition-smooth cursor-pointer">
                   <CardContent className="p-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-muted/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <method.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">

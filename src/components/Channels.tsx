@@ -63,7 +63,7 @@ const channels = [
 
 const Channels = () => {
   return (
-    <section id="channels" className="py-24 bg-background">
+    <section id="channels" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -74,7 +74,7 @@ const Channels = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <AnimatedSection>
-              <div className="inline-flex items-center space-x-2 bg-muted/20 rounded-full px-4 py-2 mb-6">
+              <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
                 <ExternalLink className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-primary">Our Channels</span>
               </div>
