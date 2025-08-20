@@ -48,32 +48,6 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Enhanced Badge with dynamic effects */}
-          <AnimatedSection delay={0.2}>
-            <motion.div 
-              className="inline-flex items-center space-x-2 bg-secondary/60 backdrop-blur-md rounded-full px-6 py-3 mb-8 shadow-soft border border-border/20"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 8px 25px -8px hsl(267 65% 55% / 0.3)",
-                transition: { type: "spring", stiffness: 400 }
-              }}
-            >
-              <motion.div
-                animate={{ 
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Star className="w-5 h-5 text-primary" />
-              </motion.div>
-              <span className="text-sm font-medium">Award-Winning Digital Content Studio</span>
-            </motion.div>
-          </AnimatedSection>
 
 
           {/* Enhanced Subtitle with better spacing */}
