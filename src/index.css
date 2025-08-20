@@ -16,10 +16,10 @@
     --popover: 220 13% 10%;
     --popover-foreground: 210 20% 95%;
 
-    /* Refined Brand Colors - Professional & Balanced */
-    --primary: 318 45% 52%;        /* Softer magenta - less intense */
+    /* Professional Purple-First Brand Colors */
+    --primary: 267 55% 48%;        /* Purple as primary - professional */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 318 35% 65%;   /* Subtle glow effect */
+    --primary-glow: 267 45% 58%;   /* Lighter purple for effects */
 
     --secondary: 210 15% 18%;      /* Warmer neutral background */
     --secondary-foreground: 210 20% 95%;
@@ -27,7 +27,7 @@
     --muted: 210 12% 16%;          /* Refined neutral */
     --muted-foreground: 210 12% 68%;
 
-    --accent: 267 55% 48%;         /* Balanced purple accent */
+    --accent: 318 25% 55%;         /* Pink as subtle accent only */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,18 +35,18 @@
 
     --border: 210 10% 22%;         /* Softer neutral border */
     --input: 210 12% 16%;          /* Consistent with muted */
-    --ring: 318 45% 52%;           /* Match refined primary */
+    --ring: 267 55% 48%;           /* Match purple primary */
 
-    /* Refined Brand Gradients - Professional & Balanced */
+    /* Purple-First Professional Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(267 55% 48% / 0.08));
-    --gradient-primary: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
-    --gradient-accent: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 45% 52%));
+    --gradient-primary: linear-gradient(135deg, hsl(267 55% 48%), hsl(267 45% 58%));
+    --gradient-accent: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
     --gradient-card: linear-gradient(135deg, hsl(220 13% 10%), hsl(267 55% 48% / 0.03));
-    --gradient-logo: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
+    --gradient-logo: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
 
-    /* Refined Professional Shadows */
-    --shadow-glow: 0 0 30px hsl(318 45% 52% / 0.25);
-    --shadow-card: 0 8px 25px -8px hsl(318 45% 52% / 0.15);
+    /* Purple-Focused Professional Shadows */
+    --shadow-glow: 0 0 30px hsl(267 55% 48% / 0.25);
+    --shadow-card: 0 8px 25px -8px hsl(267 55% 48% / 0.15);
     --shadow-hero: 0 20px 40px -12px hsl(267 55% 48% / 0.2);
 
     /* Animation Variables */
@@ -227,11 +227,11 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 15px hsl(318 45% 52% / 0.4);
+    text-shadow: 0 0 15px hsl(267 55% 48% / 0.4);
   }
   
   .text-gradient-logo {
-    background: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
+    background: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -240,7 +240,7 @@
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
-                linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%)) border-box;
+                linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%)) border-box;
   }
   
   .scroll-smooth {
@@ -271,7 +271,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsl(318 45% 52% / 0.08), hsl(267 55% 48% / 0.08));
+    background: linear-gradient(135deg, hsl(267 55% 48% / 0.08), hsl(318 25% 55% / 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 0.5rem;
@@ -294,7 +294,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, hsl(318 45% 52%), hsl(267 55% 48%));
+    background: linear-gradient(135deg, hsl(267 55% 48%), hsl(318 25% 55%));
     transition: all 0.3s ease;
     transform: translateX(-50%);
     will-change: width;
