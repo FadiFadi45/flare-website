@@ -27,7 +27,7 @@
     --muted: 210 15% 20%;          /* Lighter muted background */
     --muted-foreground: 210 15% 75%; /* Higher contrast text */
 
-    --accent: 318 15% 65%;         /* Very subtle pink accent */
+    --accent: 318 45% 58%;         /* Softened pink accent */
     --accent-foreground: 210 20% 15%;
 
     --destructive: 0 84% 60%;
@@ -40,10 +40,10 @@
     /* Dynamic & Fresh Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%), hsl(267 65% 55% / 0.12));
     --gradient-primary: linear-gradient(135deg, hsl(267 65% 55%), hsl(267 55% 68%));
-    --gradient-accent: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%));
     --gradient-card: linear-gradient(135deg, hsl(210 15% 12%), hsl(267 65% 55% / 0.08));
-    --gradient-logo: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
-    --gradient-fresh: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 15% 65% / 0.05));
+    --gradient-logo: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%));
+    --gradient-fresh: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 45% 58% / 0.05));
 
     /* Vibrant & Dynamic Shadows */
     --shadow-glow: 0 0 35px hsl(267 65% 55% / 0.3);
@@ -246,7 +246,7 @@
   }
   
   .text-gradient-logo {
-    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
+    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -255,7 +255,7 @@
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
-                linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%)) border-box;
+                linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%)) border-box;
   }
   
   .scroll-smooth {
@@ -286,7 +286,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 15% 65% / 0.05));
+    background: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 45% 58% / 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 0.5rem;
@@ -309,7 +309,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 15% 65%));
+    background: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%));
     transition: all 0.3s ease;
     transform: translateX(-50%);
     will-change: width;
