@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  Video, 
-  Users, 
-  Megaphone, 
+  Palette, 
   TrendingUp, 
   Shield, 
+  Radio,
   DollarSign,
-  Settings,
-  BarChart3,
+  Share2,
+  Search,
+  PenTool,
   Play,
   ArrowLeft
 } from "lucide-react";
@@ -20,76 +20,70 @@ import { staggerContainer } from "@/lib/animations";
 
 const allServices = [
   {
-    category: "Content Production",
+    category: "Branding & Design",
     services: [
       {
-        icon: Video,
-        title: "Video Production",
-        description: "End-to-end video production from concept to post-production for TV, film, and digital platforms.",
-        features: ["Script Development", "Filming & Direction", "Post-Production", "Motion Graphics"]
-      },
-      {
-        icon: Play,
-        title: "Live Streaming",
-        description: "Professional live streaming solutions for events, shows, and real-time content.",
-        features: ["Multi-camera setups", "Real-time editing", "Interactive features", "Global distribution"]
+        icon: Palette,
+        title: "Channel & Videos Branding Layout",
+        description: "Design and implement a cohesive and visually appealing layout for your channels and videos to enhance brand recognition and viewer engagement.",
+        features: ["Brand Identity Design", "Channel Layout Creation", "Video Template Design", "Visual Consistency"]
       }
     ]
   },
   {
-    category: "Channel Management",
+    category: "Optimization & Strategy",
     services: [
-      {
-        icon: Users,
-        title: "YouTube MCN",
-        description: "Complete YouTube Multi-Channel Network services for creators and brands.",
-        features: ["Channel optimization", "Content strategy", "Monetization", "Analytics"]
-      },
-      {
-        icon: Settings,
-        title: "Platform Management",
-        description: "Multi-platform content distribution and optimization across all major platforms.",
-        features: ["Cross-platform publishing", "Content scheduling", "Performance tracking", "Audience growth"]
-      }
-    ]
-  },
-  {
-    category: "Marketing & Strategy",
-    services: [
-      {
-        icon: Megaphone,
-        title: "Influencer Marketing",
-        description: "Connect brands with top creators and manage comprehensive influencer campaigns.",
-        features: ["Creator partnerships", "Campaign management", "Brand integration", "Performance tracking"]
-      },
       {
         icon: TrendingUp,
-        title: "Social Media Strategy",
-        description: "Data-driven social media strategies across all major platforms to grow your audience.",
-        features: ["Platform strategy", "Content planning", "Community management", "Growth hacking"]
+        title: "Channel & Video Optimization",
+        description: "Optimize your channels and videos for better visibility and performance on various platforms, ensuring they reach a wider audience.",
+        features: ["Performance Analysis", "Platform-Specific Optimization", "Audience Targeting", "Engagement Strategies"]
+      },
+      {
+        icon: Search,
+        title: "SEO Strategy",
+        description: "FLARE will develop and implement a search engine optimization strategy to improve the visibility and ranking of your content on search engines.",
+        features: ["Keyword Research", "Content Optimization", "Search Ranking Improvement", "Analytics & Monitoring"]
+      },
+      {
+        icon: PenTool,
+        title: "Content Strategy",
+        description: "Plan, create, and manage content to achieve your business goals and engage your target audience effectively.",
+        features: ["Content Planning", "Audience Analysis", "Editorial Calendar", "Performance Measurement"]
       }
     ]
   },
   {
-    category: "Analytics & Protection",
+    category: "Protection & Monetization",
     services: [
-      {
-        icon: BarChart3,
-        title: "Analytics & Reporting",
-        description: "Comprehensive analytics and reporting for data-driven decision making.",
-        features: ["Performance metrics", "Revenue tracking", "Audience insights", "Custom reports"]
-      },
       {
         icon: Shield,
         title: "Copyright Protection",
-        description: "Protect your intellectual property with comprehensive content monitoring and enforcement.",
-        features: ["Content ID management", "Copyright enforcement", "Revenue recovery", "Legal support"]
+        description: "FLARE will help protect your content from unauthorized use and infringement by implementing effective copyright protection measures.",
+        features: ["Content Monitoring", "Infringement Detection", "Legal Enforcement", "Rights Management"]
       },
       {
         icon: DollarSign,
-        title: "Monetization",
-        description: "Maximize revenue through multiple streams including ads, sponsorships, and licensing.",
-        features: ["Ad revenue optimization", "Sponsorship deals", "Licensing agreements", "Revenue analytics"]
+        title: "Content Monetization",
+        description: "FLARE will assist in generating revenue from your content through various monetization strategies and platforms.",
+        features: ["Revenue Optimization", "Multiple Income Streams", "Sponsorship Integration", "Analytics Tracking"]
+      }
+    ]
+  },
+  {
+    category: "Distribution & Streaming",
+    services: [
+      {
+        icon: Share2,
+        title: "Content Distribution",
+        description: "Distribute your content across multiple platforms and channels to maximize reach and engagement.",
+        features: ["Multi-Platform Publishing", "Cross-Channel Strategy", "Audience Expansion", "Performance Tracking"]
+      },
+      {
+        icon: Radio,
+        title: "Pre-recorded Live Stream",
+        description: "Broadcast pre-recorded content as live streams, providing flexibility and control over your live streaming schedule.",
+        features: ["Stream Scheduling", "Content Preparation", "Live Simulation", "Audience Interaction"]
       }
     ]
   }

@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Video, 
-  Users, 
-  Megaphone, 
+  Palette, 
   TrendingUp, 
   Shield, 
+  Radio,
   DollarSign,
+  Share2,
+  Search,
+  PenTool,
   ArrowRight,
   Play
 } from "lucide-react";
@@ -18,40 +20,40 @@ import { staggerContainer } from "@/lib/animations";
 
 const services = [
   {
-    icon: Video,
-    title: "Content Production",
-    description: "End-to-end video production from concept to post-production for TV, film, and digital platforms.",
-    features: ["Script Development", "Filming & Direction", "Post-Production", "Motion Graphics"]
-  },
-  {
-    icon: Users,
-    title: "Channel Management",
-    description: "Complete YouTube MCN services and multi-platform channel optimization for maximum reach.",
-    features: ["YouTube MCN", "Content Strategy", "SEO Optimization", "Analytics & Reporting"]
-  },
-  {
-    icon: Megaphone,
-    title: "Influencer Marketing",
-    description: "Connect brands with top creators and manage comprehensive influencer campaigns.",
-    features: ["Creator Partnerships", "Campaign Management", "Brand Integration", "Performance Tracking"]
+    icon: Palette,
+    title: "Channel & Videos Branding Layout",
+    description: "Design and implement a cohesive and visually appealing layout for your channels and videos to enhance brand recognition and viewer engagement.",
+    features: ["Brand Identity Design", "Channel Layout Creation", "Video Template Design", "Visual Consistency"]
   },
   {
     icon: TrendingUp,
-    title: "Social Media Strategy",
-    description: "Data-driven social media strategies across all major platforms to grow your audience.",
-    features: ["Platform Strategy", "Content Planning", "Community Management", "Growth Hacking"]
+    title: "Channel & Video Optimization",
+    description: "Optimize your channels and videos for better visibility and performance on various platforms, ensuring they reach a wider audience.",
+    features: ["Performance Analysis", "Platform-Specific Optimization", "Audience Targeting", "Engagement Strategies"]
   },
   {
     icon: Shield,
     title: "Copyright Protection",
-    description: "Protect your intellectual property with comprehensive content monitoring and enforcement.",
-    features: ["Content ID Management", "Copyright Enforcement", "Revenue Recovery", "Legal Support"]
+    description: "FLARE will help protect your content from unauthorized use and infringement by implementing effective copyright protection measures.",
+    features: ["Content Monitoring", "Infringement Detection", "Legal Enforcement", "Rights Management"]
+  },
+  {
+    icon: Radio,
+    title: "Pre-recorded Live Stream",
+    description: "Broadcast pre-recorded content as live streams, providing flexibility and control over your live streaming schedule.",
+    features: ["Stream Scheduling", "Content Preparation", "Live Simulation", "Audience Interaction"]
   },
   {
     icon: DollarSign,
-    title: "Monetization",
-    description: "Maximize revenue through multiple streams including ads, sponsorships, and licensing.",
-    features: ["Ad Revenue Optimization", "Sponsorship Deals", "Licensing Agreements", "Revenue Analytics"]
+    title: "Content Monetization",
+    description: "FLARE will assist in generating revenue from your content through various monetization strategies and platforms.",
+    features: ["Revenue Optimization", "Multiple Income Streams", "Sponsorship Integration", "Analytics Tracking"]
+  },
+  {
+    icon: Share2,
+    title: "Content Distribution",
+    description: "Distribute your content across multiple platforms and channels to maximize reach and engagement.",
+    features: ["Multi-Platform Publishing", "Cross-Channel Strategy", "Audience Expansion", "Performance Tracking"]
   }
 ];
 
@@ -86,7 +88,7 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {services.slice(0, 3).map((service, index) => (
+          {services.map((service, index) => (
             <AnimatedCard key={index} delay={index * 0.15}>
               <Card className="gradient-card shadow-card hover:shadow-glow transition-smooth group cursor-pointer h-full">
                 <CardHeader>
