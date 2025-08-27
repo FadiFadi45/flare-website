@@ -40,11 +40,11 @@ const Hero = () => {
         }}
       >
         <motion.div 
-          className="absolute inset-0 bg-background/50 backdrop-blur-[2px] will-change-opacity"
+          className="absolute inset-0 bg-background/15 will-change-opacity"
           style={{ opacity }}
         ></motion.div>
-        {/* Dynamic gradient overlay */}
-        <div className="absolute inset-0 gradient-fresh opacity-60"></div>
+        {/* Minimal overlay for text readability */}
+        <div className="absolute inset-0 gradient-fresh opacity-20"></div>
       </motion.div>
 
       {/* Content */}
@@ -82,7 +82,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <p className="text-xl font-medium text-foreground/90 mb-6 leading-relaxed tracking-wide">
+                <p className="text-xl font-medium text-foreground mb-6 leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
                   Transforming content creation through innovative digital solutions
                 </p>
                 
@@ -101,7 +101,7 @@ const Hero = () => {
                   ].map((feature, index) => (
                     <motion.div
                       key={feature}
-                      className="inline-flex items-center px-4 py-2 bg-background/20 backdrop-blur-sm border border-primary/20 rounded-full text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300"
+                      className="inline-flex items-center px-4 py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
@@ -115,7 +115,7 @@ const Hero = () => {
                 
                 {/* Secondary Description */}
                 <motion.p 
-                  className="text-base text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
+                  className="text-base text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
@@ -147,7 +147,7 @@ const Hero = () => {
                 {/* Header Section */}
                 <div className="text-center mb-8">
                   <motion.h3 
-                    className="text-2xl font-bold text-gradient-logo mb-3 tracking-tight"
+                    className="text-2xl font-bold text-gradient-logo mb-3 tracking-tight drop-shadow-lg shadow-black/50"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.4, duration: 0.6 }}
@@ -155,7 +155,7 @@ const Hero = () => {
                     Connect & Create
                   </motion.h3>
                   <motion.p 
-                    className="text-sm text-muted-foreground/90 font-medium tracking-wide"
+                    className="text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.6, duration: 0.6 }}
