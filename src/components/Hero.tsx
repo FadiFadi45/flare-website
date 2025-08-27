@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-cinematic-new.jpg";
+import heroImage from "@/assets/hero-cinematic-brand.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
