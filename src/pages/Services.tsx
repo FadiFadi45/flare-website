@@ -17,6 +17,7 @@ import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { staggerContainer } from "@/lib/animations";
+import Footer from "@/components/Footer";
 
 const allServices = [
   {
@@ -168,40 +169,7 @@ const ServicesPage = () => {
         </section>
       ))}
 
-      {/* CTA Section */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center">
-            <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-12 max-w-3xl mx-auto">
-              <AnimatedText>
-                <h2 className="mb-6">Ready to Transform Your Content?</h2>
-              </AnimatedText>
-              <AnimatedText delay={0.2}>
-                <p className="text-muted-foreground mb-8">
-                  Let's discuss how our comprehensive services can help bring your vision to life and achieve your digital goals.
-                </p>
-              </AnimatedText>
-              <motion.div 
-                className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 0.4, duration: 0.6 }
-                }}
-                viewport={{ once: true }}
-              >
-                <Button variant="default" size="lg" asChild>
-                  <a href="#contact">Get Started Today</a>
-                </Button>
-                <Button variant="minimal" size="lg" asChild>
-                  <a href="#contact">Schedule Consultation</a>
-                </Button>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };
