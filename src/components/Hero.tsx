@@ -48,7 +48,7 @@ const Hero = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div 
           className="max-w-4xl mx-auto"
           variants={staggerContainer}
@@ -64,9 +64,9 @@ const Hero = () => {
               className="mb-8"
             >
               <motion.div
-                className="h-1 w-24 bg-gradient-primary rounded-full mx-auto"
+                className="h-1 w-16 sm:w-24 bg-gradient-primary rounded-full mx-auto"
                 initial={{ width: 0 }}
-                animate={{ width: 96 }}
+                animate={{ width: 64 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
               />
             </motion.div>
@@ -74,21 +74,21 @@ const Hero = () => {
 
           {/* Professional Subtitle with Enhanced Design */}
           <AnimatedSection delay={0.6}>
-            <div className="relative max-w-4xl mx-auto mb-16">
+            <div className="relative max-w-4xl mx-auto mb-12 sm:mb-16">
               {/* Main Subtitle */}
               <motion.div
-                className="relative"
+                className="relative px-2 sm:px-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <p className="text-xl font-medium text-foreground mb-6 leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
+                <p className="text-lg sm:text-xl lg:text-2xl font-medium text-foreground mb-4 sm:mb-6 leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
                   Transforming content creation through innovative digital solutions
                 </p>
                 
                 {/* Feature Pills */}
                 <motion.div 
-                  className="flex flex-wrap items-center justify-center gap-3 mb-8"
+                  className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-2"
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0, duration: 0.6 }}
@@ -101,13 +101,13 @@ const Hero = () => {
                   ].map((feature, index) => (
                     <motion.div
                       key={feature}
-                      className="inline-flex items-center px-4 py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300"
+                      className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full mr-2" />
+                      <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary/60 rounded-full mr-1.5 sm:mr-2" />
                       {feature}
                     </motion.div>
                   ))}
@@ -115,7 +115,7 @@ const Hero = () => {
                 
                 {/* Secondary Description */}
                 <motion.p 
-                  className="text-base text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40"
+                  className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
@@ -136,18 +136,18 @@ const Hero = () => {
         {/* Modern Connect & Create Section */}
         <AnimatedSection delay={1.0}>
           <motion.div 
-            className="mt-24"
+            className="mt-16 sm:mt-20 lg:mt-24"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative">
+            <div className="relative px-4 sm:px-0">
               {/* Main Container */}
-              <div className="mx-auto max-w-md">
+              <div className="mx-auto max-w-sm sm:max-w-md">
                 {/* Header Section */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-6 sm:mb-8">
                   <motion.h3 
-                    className="text-2xl font-bold text-gradient-logo mb-3 tracking-tight drop-shadow-lg shadow-black/50"
+                    className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-logo mb-2 sm:mb-3 tracking-tight drop-shadow-lg shadow-black/50"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.4, duration: 0.6 }}
@@ -155,7 +155,7 @@ const Hero = () => {
                     Connect & Create
                   </motion.h3>
                   <motion.p 
-                    className="text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
+                    className="text-xs sm:text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.6, duration: 0.6 }}
@@ -166,7 +166,7 @@ const Hero = () => {
 
                 {/* Social Icons Grid */}
                 <motion.div 
-                  className="flex items-center justify-center gap-4"
+                  className="flex items-center justify-center gap-3 sm:gap-4"
                   variants={staggerContainer}
                   initial="hidden"
                   animate="visible"
@@ -189,8 +189,8 @@ const Hero = () => {
                         }
                       }}
                       whileHover={{ 
-                        scale: 1.15,
-                        y: -8,
+                        scale: 1.1,
+                        y: -4,
                         transition: { duration: 0.2, ease: "easeOut" }
                       }}
                       whileTap={{ scale: 0.95 }}
@@ -199,7 +199,7 @@ const Hero = () => {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="relative h-14 w-14 p-0 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 hover:border-primary/30 overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/20"
+                        className="relative h-12 w-12 sm:h-14 sm:w-14 p-0 rounded-xl sm:rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 hover:border-primary/30 overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/20"
                         asChild
                       >
                         <a href={social.url} aria-label={social.label}>
@@ -207,11 +207,11 @@ const Hero = () => {
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-accent/20" />
                           
                           {/* Icon */}
-                          <social.icon className="w-6 h-6 text-foreground/80 group-hover:text-primary transition-colors duration-300 relative z-10" />
+                          <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/80 group-hover:text-primary transition-colors duration-300 relative z-10" />
                           
                           {/* Glow Effect */}
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-2xl blur-xl" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-xl sm:rounded-2xl blur-xl" />
                           </div>
                         </a>
                       </Button>
@@ -221,7 +221,7 @@ const Hero = () => {
 
                 {/* Bottom Tagline */}
                 <motion.div 
-                  className="text-center mt-6"
+                  className="text-center mt-4 sm:mt-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
@@ -265,11 +265,11 @@ const Hero = () => {
 
       {/* Enhanced Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ 
           opacity: 1, 
-          y: [0, 12, 0],
+          y: [0, 8, 0],
           transition: {
             opacity: { delay: 2, duration: 0.5 },
             y: { repeat: Infinity, duration: 2.5, ease: "easeInOut" }
@@ -277,11 +277,11 @@ const Hero = () => {
         }}
         whileHover={{ scale: 1.1 }}
       >
-        <div className="w-6 h-10 border-2 border-primary/60 rounded-full flex justify-center shadow-soft backdrop-blur-sm bg-background/10">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-primary/60 rounded-full flex justify-center shadow-soft backdrop-blur-sm bg-background/10">
           <motion.div 
-            className="w-1 h-3 bg-primary rounded-full mt-2"
+            className="w-1 h-2 sm:h-3 bg-primary rounded-full mt-1.5 sm:mt-2"
             animate={{ 
-              y: [0, 14, 0],
+              y: [0, 10, 0],
               opacity: [1, 0.4, 1],
               scale: [1, 0.8, 1]
             }}
