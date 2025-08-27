@@ -1,11 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star } from "lucide-react";
+import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-cinematic-new.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
+
+const socialLinks = [
+  { icon: Youtube, label: "YouTube", url: "#" },
+  { icon: Instagram, label: "Instagram", url: "#" },
+  { icon: Twitter, label: "Twitter", url: "#" },
+  { icon: Linkedin, label: "LinkedIn", url: "#" }
+];
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -59,6 +66,26 @@ const Hero = () => {
 
 
         </motion.div>
+
+        {/* Follow Us Social Section */}
+        <AnimatedSection delay={1.0}>
+          <div className="mt-16">
+            <p className="text-sm font-medium text-primary mb-4">Follow Us</p>
+            <div className="flex items-center justify-center space-x-4">
+              {socialLinks.map((social, index) => (
+                <Button 
+                  key={index} 
+                  variant="ghost" 
+                  size="sm"
+                  className="h-10 w-10 p-0 rounded-full bg-background/10 backdrop-blur-sm border border-border/20 hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
+                >
+                  <social.icon className="w-4 h-4" />
+                  <span className="sr-only">{social.label}</span>
+                </Button>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
 
       {/* Enhanced Scroll Indicator */}

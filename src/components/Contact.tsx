@@ -7,11 +7,7 @@ import {
   Phone, 
   MapPin, 
   Clock, 
-  Send,
-  Youtube,
-  Instagram,
-  Twitter,
-  Linkedin
+  Send
 } from "lucide-react";
 
 const contactMethods = [
@@ -45,12 +41,6 @@ const contactMethods = [
   }
 ];
 
-const socialLinks = [
-  { icon: Youtube, label: "YouTube", url: "#" },
-  { icon: Instagram, label: "Instagram", url: "#" },
-  { icon: Twitter, label: "Twitter", url: "#" },
-  { icon: Linkedin, label: "LinkedIn", url: "#" }
-];
 
 const Contact = () => {
   return (
@@ -144,22 +134,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Links */}
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="text-lg">Follow Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-3">
-                  {socialLinks.map((social, index) => (
-                    <Button key={index} variant="ghost" className="h-12 flex-col space-y-1">
-                      <social.icon className="w-5 h-5" />
-                      <span className="text-xs">{social.label}</span>
-                    </Button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
 
           </div>
         </div>
