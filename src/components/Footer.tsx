@@ -95,9 +95,9 @@ const Footer = () => {
               © 2025 Flare Media LLC. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-smooth">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-smooth">Terms of Service</a>
-              <a href="#" className="hover:text-primary transition-smooth">Cookie Policy</a>
+              <a href="/privacy-policy" className="hover:text-primary transition-smooth">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-primary transition-smooth">Terms of Service</a>
+              <a href="/cookie-policy" className="hover:text-primary transition-smooth">Cookie Policy</a>
             </div>
           </div>
         </div>
