@@ -10,6 +10,7 @@ import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
 const socialLinks = [
   { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/flare.media0/", color: "from-pink-500 to-orange-400" },
   { icon: Youtube, label: "YouTube", url: "https://www.youtube.com/@FlareArtsMedia", color: "from-red-500 to-red-600" },
+  { icon: Facebook, label: "Facebook", url: "https://www.facebook.com/Flare.media0/", color: "from-blue-500 to-blue-600" },
   { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/company/flare-media-llc/", color: "from-blue-600 to-blue-700" }
 ];
 

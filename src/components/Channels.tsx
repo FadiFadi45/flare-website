@@ -40,7 +40,7 @@ const channels = [
     icon: Facebook,
     description: "Community & updates",
     subscribers: "950K+",
-    url: "https://facebook.com/flaremedia",
+    url: "https://www.facebook.com/Flare.media0/",
     gradient: "from-blue-600 to-blue-700"
   },
   {

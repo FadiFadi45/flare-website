@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, Youtube, Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import { Play, Youtube, Instagram, Twitter, Linkedin, Facebook, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -27,6 +27,11 @@ const Footer = () => {
               <Button variant="ghost" size="icon" asChild>
                 <a href="https://www.instagram.com/flare.media0/" target="_blank" rel="noopener noreferrer">
                   <Instagram className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.facebook.com/Flare.media0/" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-4 h-4" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
