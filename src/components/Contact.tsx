@@ -177,7 +177,7 @@ const Contact = () => {
                       Message <span className="text-destructive">*</span>
                     </label>
                     <Textarea 
-                      placeholder="Tell us about your project, goals, and timeline..."
+                      placeholder="Your message..."
                       className={`min-h-[120px] ${errors.message ? "border-destructive" : ""}`}
                       {...register("message", {
                         required: "Message is required",
