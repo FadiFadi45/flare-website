@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { 
   Mail, 
   Phone, 
@@ -9,6 +11,14 @@ import {
   Clock, 
   Send
 } from "lucide-react";
+
+interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  message: string;
+}
 
 const contactMethods = [
   {
@@ -43,6 +53,33 @@ const contactMethods = [
 
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormData>();
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitMessage("");
+    
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log("Form submitted:", data);
+      setSubmitMessage("Thank you! Your message has been sent successfully.");
+      reset();
+    } catch (error) {
+      setSubmitMessage("Sorry, there was an error sending your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20 bg-secondary/20 scroll-offset">
       <div className="container mx-auto px-6">
@@ -69,45 +106,114 @@ const Contact = () => {
                 <CardTitle>Send us a message</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">First Name</label>
-                    <Input placeholder="John" />
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        First Name <span className="text-destructive">*</span>
+                      </label>
+                      <Input 
+                        placeholder="John"
+                        {...register("firstName", {
+                          required: "First name is required",
+                          minLength: { value: 2, message: "First name must be at least 2 characters" }
+                        })}
+                        className={errors.firstName ? "border-destructive" : ""}
+                      />
+                      {errors.firstName && (
+                        <p className="text-sm text-destructive mt-1">{errors.firstName.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Last Name <span className="text-destructive">*</span>
+                      </label>
+                      <Input 
+                        placeholder="Doe"
+                        {...register("lastName", {
+                          required: "Last name is required",
+                          minLength: { value: 2, message: "Last name must be at least 2 characters" }
+                        })}
+                        className={errors.lastName ? "border-destructive" : ""}
+                      />
+                      {errors.lastName && (
+                        <p className="text-sm text-destructive mt-1">{errors.lastName.message}</p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Last Name</label>
-                    <Input placeholder="Doe" />
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Email <span className="text-destructive">*</span>
+                      </label>
+                      <Input 
+                        type="email" 
+                        placeholder="john@example.com"
+                        {...register("email", {
+                          required: "Email is required",
+                          pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Please enter a valid email address"
+                          }
+                        })}
+                        className={errors.email ? "border-destructive" : ""}
+                      />
+                      {errors.email && (
+                        <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Company</label>
+                      <Input 
+                        placeholder="Your Company"
+                        {...register("company")}
+                      />
+                    </div>
                   </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Email</label>
-                    <Input type="email" placeholder="john@example.com" />
+                    <label className="text-sm font-medium mb-2 block">
+                      Message <span className="text-destructive">*</span>
+                    </label>
+                    <Textarea 
+                      placeholder="Tell us about your project, goals, and timeline..."
+                      className={`min-h-[120px] ${errors.message ? "border-destructive" : ""}`}
+                      {...register("message", {
+                        required: "Message is required",
+                        minLength: { value: 10, message: "Message must be at least 10 characters" }
+                      })}
+                    />
+                    {errors.message && (
+                      <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                    )}
                   </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Company</label>
-                    <Input placeholder="Your Company" />
-                  </div>
-                </div>
 
+                  <Button 
+                    type="submit" 
+                    variant="default" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
 
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Message</label>
-                  <Textarea 
-                    placeholder="Tell us about your project, goals, and timeline..."
-                    className="min-h-[120px]"
-                  />
-                </div>
+                  {submitMessage && (
+                    <div className={`text-sm text-center p-3 rounded-md ${
+                      submitMessage.includes("error") 
+                        ? "bg-destructive/10 text-destructive" 
+                        : "bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                    }`}>
+                      {submitMessage}
+                    </div>
+                  )}
 
-                <Button variant="default" size="lg" className="w-full">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  We'll respond within 24 hours during business days.
-                </p>
+                  <p className="text-xs text-muted-foreground text-center">
+                    We'll respond within 24 hours during business days.
+                  </p>
+                </form>
               </CardContent>
             </Card>
           </div>
