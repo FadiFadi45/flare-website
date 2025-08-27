@@ -48,7 +48,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-primary transition-smooth">Content Production</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Channel Management</a></li>
-              <li><a href="#" className="hover:text-primary transition-smooth">Influencer Marketing</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Social Media Strategy</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Copyright Protection</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Monetization</a></li>
@@ -63,8 +62,6 @@ const Footer = () => {
               <li><a href="#about" className="hover:text-primary transition-smooth">About Us</a></li>
               <li><a href="#productions" className="hover:text-primary transition-smooth">Productions</a></li>
               <li><a href="#" className="hover:text-primary transition-smooth">Careers</a></li>
-              <li><a href="#" className="hover:text-primary transition-smooth">Press</a></li>
-              <li><a href="#" className="hover:text-primary transition-smooth">Partners</a></li>
               <li><a href="#contact" className="hover:text-primary transition-smooth">Contact</a></li>
             </ul>
           </div>
