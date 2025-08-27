@@ -55,13 +55,82 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
+          {/* Hero Title */}
+          <AnimatedSection>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="mb-8"
+            >
+              <h1 className="mb-4 text-gradient-logo">
+                Flare Media
+              </h1>
+              <motion.div
+                className="h-1 w-24 bg-gradient-primary rounded-full mx-auto"
+                initial={{ width: 0 }}
+                animate={{ width: 96 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              />
+            </motion.div>
+          </AnimatedSection>
 
-
-          {/* Enhanced Subtitle with better spacing */}
+          {/* Professional Subtitle with Enhanced Design */}
           <AnimatedSection delay={0.6}>
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              Premium digital content production, channel management, and influencer marketing across TV, film, and social media platforms.
-            </p>
+            <div className="relative max-w-4xl mx-auto mb-16">
+              {/* Main Subtitle */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                <p className="text-xl font-medium text-foreground/90 mb-6 leading-relaxed tracking-wide">
+                  Transforming content creation through innovative digital solutions
+                </p>
+                
+                {/* Feature Pills */}
+                <motion.div 
+                  className="flex flex-wrap items-center justify-center gap-3 mb-8"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.6 }}
+                >
+                  {[
+                    "Premium Production",
+                    "Channel Management", 
+                    "Strategic Marketing",
+                    "Multi-Platform Distribution"
+                  ].map((feature, index) => (
+                    <motion.div
+                      key={feature}
+                      className="inline-flex items-center px-4 py-2 bg-background/20 backdrop-blur-sm border border-primary/20 rounded-full text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full mr-2" />
+                      {feature}
+                    </motion.div>
+                  ))}
+                </motion.div>
+                
+                {/* Secondary Description */}
+                <motion.p 
+                  className="text-base text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.6, duration: 0.8 }}
+                >
+                  Empowering creators and brands across TV, film, and digital platforms with cutting-edge production, optimization, and monetization strategies.
+                </motion.p>
+              </motion.div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-2 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
+              <div className="absolute -bottom-2 right-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+            </div>
           </AnimatedSection>
 
 
