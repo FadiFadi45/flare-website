@@ -63,9 +63,6 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="mb-8"
             >
-              <h1 className="mb-4 text-gradient-logo">
-                Flare Media
-              </h1>
               <motion.div
                 className="h-1 w-24 bg-gradient-primary rounded-full mx-auto"
                 initial={{ width: 0 }}
