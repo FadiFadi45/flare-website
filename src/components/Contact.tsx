@@ -36,13 +36,6 @@ const contactMethods = [
     action: "tel:+971569191185"
   },
   {
-    icon: Phone,
-    title: "Call Us",
-    description: "Main Office",
-    contact: "+971 44338972",
-    action: "tel:+97144338972"
-  },
-  {
     icon: MapPin,
     title: "Dubai Office 1",
     description: "Business Bay",
