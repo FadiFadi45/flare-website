@@ -277,37 +277,41 @@ const Header = () => {
             <motion.div
               ref={mobileMenuRef}
               id="mobile-menu"
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-background border-l border-border/30 shadow-2xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-background via-background/95 to-background/90 backdrop-blur-xl border-l border-primary/20 shadow-2xl z-50 md:hidden"
               variants={menuVariants}
               initial="closed"
               animate="open"
               exit="closed"
             >
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full relative overflow-hidden">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
+                <div className="absolute bottom-20 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl" />
+                
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-border/30">
+                <div className="flex items-center justify-between p-6 border-b border-primary/10 bg-gradient-to-r from-primary/5 to-transparent">
                   <motion.h2 
-                    className="text-lg font-semibold text-foreground"
+                    className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    Navigation
+                    Main Menu
                   </motion.h2>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-8 h-8 hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-lg"
+                    className="w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-xl border border-primary/20 hover:border-primary/40"
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label="Close menu"
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-5 h-5" />
                   </Button>
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="flex-1 overflow-y-auto py-6">
-                  <ul className="space-y-2 px-6">
+                <nav className="flex-1 overflow-y-auto py-8">
+                  <ul className="space-y-3 px-6">
                     {navItems.map((item, index) => (
                       <motion.li
                         key={item}
@@ -319,7 +323,7 @@ const Header = () => {
                       >
                         <a
                           href={`#${item.toLowerCase()}`}
-                          className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-primary/5"
+                          className="group block w-full text-left px-6 py-4 text-base font-semibold text-foreground hover:text-primary bg-gradient-to-r from-transparent to-transparent hover:from-primary/5 hover:to-primary/10 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:from-primary/10 focus:to-primary/15 border border-transparent hover:border-primary/20 relative overflow-hidden"
                           onClick={(e) => {
                             e.preventDefault();
                             handleNavClick(item);
@@ -332,12 +336,16 @@ const Header = () => {
                           }}
                           tabIndex={0}
                         >
-                          <span className="flex items-center">
+                          {/* Subtle glow effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                          
+                          <span className="flex items-center relative z-10">
+                            <span className="w-2 h-2 bg-primary/60 rounded-full mr-4 group-hover:bg-primary transition-colors duration-300" />
                             {item}
                             <motion.span
-                              className="ml-auto opacity-0 text-primary"
-                              whileHover={{ opacity: 1, x: 5 }}
-                              transition={{ duration: 0.2 }}
+                              className="ml-auto opacity-0 text-primary text-lg"
+                              whileHover={{ opacity: 1, x: 8 }}
+                              transition={{ duration: 0.3 }}
                             >
                               →
                             </motion.span>
@@ -350,14 +358,18 @@ const Header = () => {
 
                 {/* Menu Footer */}
                 <motion.div 
-                  className="p-6 border-t border-border/30"
+                  className="p-6 border-t border-primary/10 bg-gradient-to-r from-transparent to-primary/5"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <p className="text-sm text-muted-foreground text-center">
-                    © 2024 Flare Media LLC
-                  </p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-primary/60 rounded-full animate-pulse" />
+                    <p className="text-sm text-muted-foreground font-medium">
+                      Flare Media LLC
+                    </p>
+                    <div className="w-2 h-2 bg-accent/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
