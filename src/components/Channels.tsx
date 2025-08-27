@@ -12,7 +12,7 @@ const channels = [
     icon: Youtube,
     description: "Video content & productions",
     subscribers: "2.5M+",
-    url: "https://youtube.com/@flaremedia",
+    url: "https://www.youtube.com/@FlareArtsMedia",
     gradient: "from-red-500 to-red-600"
   },
   {
@@ -20,7 +20,7 @@ const channels = [
     icon: Instagram,
     description: "Behind the scenes & stories",
     subscribers: "1.8M+",
-    url: "https://instagram.com/flaremedia",
+    url: "https://www.instagram.com/flare.media0/",
     gradient: "from-pink-500 to-purple-600"
   },
   {
@@ -56,7 +56,7 @@ const channels = [
     icon: Linkedin,
     description: "Professional network",
     subscribers: "85K+",
-    url: "https://linkedin.com/company/flaremedia",
+    url: "https://www.linkedin.com/company/flare-media-llc/",
     gradient: "from-blue-700 to-blue-800"
   }
 ];

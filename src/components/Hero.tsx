@@ -8,10 +8,9 @@ import { AnimatedText } from "@/components/animations/AnimatedText";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
 
 const socialLinks = [
-  { icon: Instagram, label: "Instagram", url: "#", color: "from-pink-500 to-orange-400" },
-  { icon: Youtube, label: "YouTube", url: "#", color: "from-red-500 to-red-600" },
-  { icon: Facebook, label: "Facebook", url: "#", color: "from-blue-500 to-blue-600" },
-  { icon: Twitter, label: "Twitter", url: "#", color: "from-blue-400 to-blue-500" }
+  { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/flare.media0/", color: "from-pink-500 to-orange-400" },
+  { icon: Youtube, label: "YouTube", url: "https://www.youtube.com/@FlareArtsMedia", color: "from-red-500 to-red-600" },
+  { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/company/flare-media-llc/", color: "from-blue-600 to-blue-700" }
 ];
 
 const Hero = () => {

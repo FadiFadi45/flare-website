@@ -19,17 +19,20 @@ const Footer = () => {
               across TV, film, and social media platforms.
             </p>
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon">
-                <Youtube className="w-4 h-4" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.youtube.com/@FlareArtsMedia" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="w-4 h-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon">
-                <Instagram className="w-4 h-4" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.instagram.com/flare.media0/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-4 h-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon">
-                <Twitter className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Linkedin className="w-4 h-4" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.linkedin.com/company/flare-media-llc/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>
