@@ -67,24 +67,67 @@ const Hero = () => {
 
         </motion.div>
 
-        {/* Follow Us Social Section */}
+        {/* Enhanced Follow Us Section */}
         <AnimatedSection delay={1.0}>
-          <div className="mt-16">
-            <p className="text-sm font-medium text-primary mb-4">Follow Us</p>
-            <div className="flex items-center justify-center space-x-4">
-              {socialLinks.map((social, index) => (
-                <Button 
-                  key={index} 
-                  variant="ghost" 
-                  size="sm"
-                  className="h-10 w-10 p-0 rounded-full bg-background/10 backdrop-blur-sm border border-border/20 hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
+          <motion.div 
+            className="mt-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <div className="inline-flex items-center space-x-3 bg-background/20 backdrop-blur-md rounded-2xl px-8 py-4 border border-primary/20">
+              <div className="text-center">
+                <motion.p 
+                  className="text-sm font-semibold text-gradient-logo mb-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.4, duration: 0.6 }}
                 >
-                  <social.icon className="w-4 h-4" />
-                  <span className="sr-only">{social.label}</span>
-                </Button>
-              ))}
+                  Follow Our Journey
+                </motion.p>
+                <motion.div 
+                  className="flex items-center space-x-3"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ delay: 1.6 }}
+                >
+                  {socialLinks.map((social, index) => (
+                    <motion.div
+                      key={index}
+                      variants={scaleIn}
+                      custom={index}
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        className="h-12 w-12 p-0 rounded-2xl gradient-card border border-primary/20 hover:border-primary/40 hover:shadow-glow transition-all duration-300 group"
+                        asChild
+                      >
+                        <a href={social.url} aria-label={social.label}>
+                          <social.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                        </a>
+                      </Button>
+                    </motion.div>
+                  ))}
+                </motion.div>
+                <motion.div 
+                  className="mt-4 text-xs text-muted-foreground/80"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2, duration: 0.6 }}
+                >
+                  Stay connected with latest updates
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </AnimatedSection>
       </div>
 
