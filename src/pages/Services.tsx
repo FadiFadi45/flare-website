@@ -10,6 +10,7 @@ import {
   Share2,
   Search,
   PenTool,
+  BarChart3,
   Play,
   ArrowLeft
 } from "lucide-react";
@@ -21,7 +22,7 @@ import Footer from "@/components/Footer";
 
 const allServices = [
   {
-    category: "Foundation & Strategy",
+    category: "Foundation & Branding",
     services: [
       {
         icon: Palette,
@@ -34,17 +35,6 @@ const allServices = [
         title: "Content Strategy",
         description: "Plan, create, and manage content to achieve your business goals and engage your target audience effectively.",
         features: ["Content Planning", "Audience Analysis", "Editorial Calendar", "Performance Measurement"]
-      }
-    ]
-  },
-  {
-    category: "Optimization & Growth",
-    services: [
-      {
-        icon: TrendingUp,
-        title: "Channel & Video Optimization",
-        description: "Optimize your channels and videos for better visibility and performance on various platforms, ensuring they reach a wider audience.",
-        features: ["Performance Analysis", "Platform-Specific Optimization", "Audience Targeting", "Engagement Strategies"]
       },
       {
         icon: Search,
@@ -55,8 +45,14 @@ const allServices = [
     ]
   },
   {
-    category: "Distribution & Streaming",
+    category: "Optimization & Distribution",
     services: [
+      {
+        icon: TrendingUp,
+        title: "Channel & Video Optimization",
+        description: "Optimize your channels and videos for better visibility and performance on various platforms, ensuring they reach a wider audience.",
+        features: ["Performance Analysis", "Platform-Specific Optimization", "Audience Targeting", "Engagement Strategies"]
+      },
       {
         icon: Share2,
         title: "Content Distribution",
@@ -85,6 +81,12 @@ const allServices = [
         title: "Content Monetization",
         description: "FLARE will assist in generating revenue from your content through various monetization strategies and platforms.",
         features: ["Revenue Optimization", "Multiple Income Streams", "Sponsorship Integration", "Analytics Tracking"]
+      },
+      {
+        icon: BarChart3,
+        title: "Analytics & Performance",
+        description: "Comprehensive analytics and performance tracking to monitor content success and optimize revenue generation strategies.",
+        features: ["Performance Metrics", "Revenue Analytics", "Audience Insights", "ROI Optimization"]
       }
     ]
   }
