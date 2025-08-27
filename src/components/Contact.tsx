@@ -22,8 +22,8 @@ const contactMethods = [
     icon: Phone,
     title: "Call Us",
     description: "Business inquiries",
-    contact: "+971 4 433 8972",
-    action: "tel:+97144338972"
+    contact: "+971 56 919 185",
+    action: "tel:+971569191185"
   },
   {
     icon: MapPin,
