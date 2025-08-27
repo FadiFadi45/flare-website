@@ -88,7 +88,7 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {services.map((service, index) => (
+          {services.slice(0, 3).map((service, index) => (
             <AnimatedCard key={index} delay={index * 0.15}>
               <Card className="gradient-card shadow-card hover:shadow-glow transition-smooth group cursor-pointer h-full">
                 <CardHeader>
