@@ -63,7 +63,7 @@ const Header = () => {
               }
             }}
           >
-            {['Home', 'About', 'Services', 'Productions', 'Channels', 'Talent', 'Contact'].map((item, index) => (
+            {['Home', 'About', 'Services', 'Productions', 'Channels', 'Contact'].map((item, index) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
