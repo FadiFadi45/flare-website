@@ -88,7 +88,7 @@ const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="py-20 bg-secondary/20 scroll-offset">
+    <section id="contact" className="py-12 bg-secondary/20 scroll-offset">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -185,7 +185,7 @@ const Contact = () => {
                     </label>
                     <Textarea 
                       placeholder="Your message..."
-                      className={`min-h-[120px] ${errors.message ? "border-destructive" : ""}`}
+                      className={`min-h-[180px] ${errors.message ? "border-destructive" : ""}`}
                       {...register("message", {
                         required: "Message is required",
                         minLength: { value: 10, message: "Message must be at least 10 characters" }
