@@ -55,13 +55,13 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Hero Title */}
+          {/* Hero Title - Hidden on mobile */}
           <AnimatedSection>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8 hidden sm:block"
             >
               <motion.div
                 className="h-1 w-16 sm:w-24 bg-gradient-primary rounded-full mx-auto"
@@ -74,7 +74,7 @@ const Hero = () => {
 
           {/* Professional Subtitle with Enhanced Design */}
           <AnimatedSection delay={0.6}>
-            <div className="relative max-w-4xl mx-auto mb-12 sm:mb-16">
+            <div className="relative max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16">
               {/* Main Subtitle */}
               <motion.div
                 className="relative px-2 sm:px-0"
@@ -82,40 +82,40 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <p className="text-lg sm:text-xl lg:text-2xl font-medium text-foreground mb-4 sm:mb-6 leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
                   Transforming content creation through innovative digital solutions
                 </p>
                 
-                {/* Feature Pills */}
+                {/* Feature Pills - Simplified for mobile */}
                 <motion.div 
-                  className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-2"
+                  className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8 px-2"
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0, duration: 0.6 }}
                 >
                   {[
-                    "Premium Production",
-                    "Channel Management", 
-                    "Strategic Marketing",
-                    "Multi-Platform Distribution"
+                    { text: "Premium Production", show: "block" },
+                    { text: "Channel Management", show: "block" }, 
+                    { text: "Strategic Marketing", show: "hidden sm:block" },
+                    { text: "Multi-Platform Distribution", show: "hidden sm:block" }
                   ].map((feature, index) => (
                     <motion.div
-                      key={feature}
-                      className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300"
+                      key={feature.text}
+                      className={`${feature.show} inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300`}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary/60 rounded-full mr-1.5 sm:mr-2" />
-                      {feature}
+                      {feature.text}
                     </motion.div>
                   ))}
                 </motion.div>
                 
-                {/* Secondary Description */}
+                {/* Secondary Description - Hidden on mobile */}
                 <motion.p 
-                  className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0"
+                  className="hidden sm:block text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
@@ -124,9 +124,9 @@ const Hero = () => {
                 </motion.p>
               </motion.div>
               
-              {/* Decorative Elements */}
-              <div className="absolute -top-2 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
-              <div className="absolute -bottom-2 right-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+              {/* Decorative Elements - Hidden on mobile */}
+              <div className="hidden sm:block absolute -top-2 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
+              <div className="hidden sm:block absolute -bottom-2 right-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </AnimatedSection>
 
@@ -136,7 +136,7 @@ const Hero = () => {
         {/* Modern Connect & Create Section */}
         <AnimatedSection delay={1.0}>
           <motion.div 
-            className="mt-16 sm:mt-20 lg:mt-24"
+            className="mt-12 sm:mt-16 lg:mt-20"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
@@ -144,10 +144,10 @@ const Hero = () => {
             <div className="relative px-4 sm:px-0">
               {/* Main Container */}
               <div className="mx-auto max-w-sm sm:max-w-md">
-                {/* Header Section */}
-                <div className="text-center mb-6 sm:mb-8">
+                {/* Header Section - Simplified for mobile */}
+                <div className="text-center mb-4 sm:mb-6 lg:mb-8">
                   <motion.h3 
-                    className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-logo mb-2 sm:mb-3 tracking-tight drop-shadow-lg shadow-black/50"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-gradient-logo mb-1 sm:mb-2 tracking-tight drop-shadow-lg shadow-black/50"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.4, duration: 0.6 }}
@@ -155,7 +155,7 @@ const Hero = () => {
                     Connect & Create
                   </motion.h3>
                   <motion.p 
-                    className="text-xs sm:text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
+                    className="hidden sm:block text-xs sm:text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.6, duration: 0.6 }}
@@ -219,9 +219,9 @@ const Hero = () => {
                   ))}
                 </motion.div>
 
-                {/* Bottom Tagline */}
+                {/* Bottom Tagline - Hidden on mobile */}
                 <motion.div 
-                  className="text-center mt-4 sm:mt-6"
+                  className="hidden sm:block text-center mt-4 sm:mt-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
@@ -232,9 +232,9 @@ const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Decorative Elements */}
+              {/* Decorative Elements - Hidden on mobile */}
               <motion.div 
-                className="absolute -top-4 -left-4 w-2 h-2 bg-primary/30 rounded-full blur-sm"
+                className="hidden sm:block absolute -top-4 -left-4 w-2 h-2 bg-primary/30 rounded-full blur-sm"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.6, 0.3]
@@ -246,7 +246,7 @@ const Hero = () => {
                 }}
               />
               <motion.div 
-                className="absolute -bottom-4 -right-4 w-2 h-2 bg-accent/30 rounded-full blur-sm"
+                className="hidden sm:block absolute -bottom-4 -right-4 w-2 h-2 bg-accent/30 rounded-full blur-sm"
                 animate={{ 
                   scale: [1.2, 1, 1.2],
                   opacity: [0.6, 0.3, 0.6]
