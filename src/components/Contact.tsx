@@ -226,28 +226,26 @@ const Contact = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-6">
-            {/* Contact Methods */}
-            <div className="space-y-4">
-              {contactMethods.map((method, index) => (
-                <Card key={index} className="shadow-card hover:shadow-glow transition-smooth cursor-pointer">
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <method.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-sm">{method.title}</h3>
-                        <p className="text-xs text-muted-foreground mb-1">{method.description}</p>
-                        <p className="text-sm font-medium">{method.contact}</p>
-                      </div>
+          <div>
+            <Card className="shadow-card">
+              <CardHeader>
+                <CardTitle>Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {contactMethods.map((method, index) => (
+                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-smooth cursor-pointer">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <method.icon className="w-5 h-5 text-primary" />
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm">{method.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-1">{method.description}</p>
+                      <p className="text-sm font-medium">{method.contact}</p>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
