@@ -46,7 +46,7 @@ const contactMethods = [
     icon: MapPin,
     title: "Dubai Office 2", 
     description: "Media City",
-    contact: "Dubai Media City, UAE",
+    contact: "409A - Building 1,Dubai Media City , Dubai,UAE",
     action: "#"
   },
 ];
