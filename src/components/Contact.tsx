@@ -101,16 +101,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Project Type</label>
-                  <select className="w-full h-10 px-3 py-2 bg-background border border-input rounded-md">
-                    <option>Content Production</option>
-                    <option>Channel Management</option>
-                    <option>Influencer Marketing</option>
-                    <option>Social Media Strategy</option>
-                    <option>Other</option>
-                  </select>
-                </div>
 
                 <div>
                   <label className="text-sm font-medium mb-2 block">Message</label>
