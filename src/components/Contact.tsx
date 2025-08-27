@@ -27,18 +27,18 @@ const contactMethods = [
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    description: "Dubai Office",
-    contact: "UAE, Dubai, Business Bay, Empire Heights A, Floor 9, Leading Zone Business Center",
+    title: "Dubai Office 1",
+    description: "Business Bay",
+    contact: "Business Bay, Empire Heights A, Leading Zone Business Center, Dubai, 294474",
     action: "#"
   },
   {
     icon: MapPin,
-    title: "P.O. Box",
-    description: "Postal Address",
-    contact: "PoBox 502508",
+    title: "Dubai Office 2", 
+    description: "Media City",
+    contact: "Dubai Media City, UAE",
     action: "#"
-  }
+  },
 ];
 
 
