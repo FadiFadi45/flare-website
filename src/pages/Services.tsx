@@ -21,18 +21,24 @@ import Footer from "@/components/Footer";
 
 const allServices = [
   {
-    category: "Branding & Design",
+    category: "Foundation & Strategy",
     services: [
       {
         icon: Palette,
         title: "Channel & Videos Branding Layout",
         description: "Design and implement a cohesive and visually appealing layout for your channels and videos to enhance brand recognition and viewer engagement.",
         features: ["Brand Identity Design", "Channel Layout Creation", "Video Template Design", "Visual Consistency"]
+      },
+      {
+        icon: PenTool,
+        title: "Content Strategy",
+        description: "Plan, create, and manage content to achieve your business goals and engage your target audience effectively.",
+        features: ["Content Planning", "Audience Analysis", "Editorial Calendar", "Performance Measurement"]
       }
     ]
   },
   {
-    category: "Optimization & Strategy",
+    category: "Optimization & Growth",
     services: [
       {
         icon: TrendingUp,
@@ -45,29 +51,6 @@ const allServices = [
         title: "SEO Strategy",
         description: "FLARE will develop and implement a search engine optimization strategy to improve the visibility and ranking of your content on search engines.",
         features: ["Keyword Research", "Content Optimization", "Search Ranking Improvement", "Analytics & Monitoring"]
-      },
-      {
-        icon: PenTool,
-        title: "Content Strategy",
-        description: "Plan, create, and manage content to achieve your business goals and engage your target audience effectively.",
-        features: ["Content Planning", "Audience Analysis", "Editorial Calendar", "Performance Measurement"]
-      }
-    ]
-  },
-  {
-    category: "Protection & Monetization",
-    services: [
-      {
-        icon: Shield,
-        title: "Copyright Protection",
-        description: "FLARE will help protect your content from unauthorized use and infringement by implementing effective copyright protection measures.",
-        features: ["Content Monitoring", "Infringement Detection", "Legal Enforcement", "Rights Management"]
-      },
-      {
-        icon: DollarSign,
-        title: "Content Monetization",
-        description: "FLARE will assist in generating revenue from your content through various monetization strategies and platforms.",
-        features: ["Revenue Optimization", "Multiple Income Streams", "Sponsorship Integration", "Analytics Tracking"]
       }
     ]
   },
@@ -85,6 +68,23 @@ const allServices = [
         title: "Pre-recorded Live Stream",
         description: "Broadcast pre-recorded content as live streams, providing flexibility and control over your live streaming schedule.",
         features: ["Stream Scheduling", "Content Preparation", "Live Simulation", "Audience Interaction"]
+      }
+    ]
+  },
+  {
+    category: "Protection & Revenue",
+    services: [
+      {
+        icon: Shield,
+        title: "Copyright Protection",
+        description: "FLARE will help protect your content from unauthorized use and infringement by implementing effective copyright protection measures.",
+        features: ["Content Monitoring", "Infringement Detection", "Legal Enforcement", "Rights Management"]
+      },
+      {
+        icon: DollarSign,
+        title: "Content Monetization",
+        description: "FLARE will assist in generating revenue from your content through various monetization strategies and platforms.",
+        features: ["Revenue Optimization", "Multiple Income Streams", "Sponsorship Integration", "Analytics Tracking"]
       }
     ]
   }
