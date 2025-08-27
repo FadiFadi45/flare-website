@@ -83,7 +83,7 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.4, duration: 0.6 }}
                 >
-                  Follow Our Journey
+                  Connect & Create
                 </motion.p>
                 <motion.div 
                   className="flex items-center space-x-3"
