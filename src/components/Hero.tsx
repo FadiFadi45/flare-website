@@ -94,21 +94,21 @@ const Hero = () => {
                   transition={{ delay: 1.0, duration: 0.6 }}
                 >
                   {[
-                    { text: "Premium Production", show: "block" },
-                    { text: "Channel Management", show: "block" }, 
-                    { text: "Strategic Marketing", show: "hidden sm:block" },
-                    { text: "Multi-Platform Distribution", show: "hidden sm:block" }
+                    { text: "Premium Production", show: "flex" },
+                    { text: "Channel Management", show: "flex" }, 
+                    { text: "Strategic Marketing", show: "hidden sm:flex" },
+                    { text: "Multi-Platform Distribution", show: "hidden sm:flex" }
                   ].map((feature, index) => (
                     <motion.div
                       key={feature.text}
-                      className={`${feature.show} inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300`}
+                      className={`${feature.show} flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300`}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary/60 rounded-full mr-1.5 sm:mr-2" />
-                      {feature.text}
+                      <span>{feature.text}</span>
                     </motion.div>
                   ))}
                 </motion.div>

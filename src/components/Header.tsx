@@ -133,7 +133,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 shadow-soft">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#00000026]">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo with Enhanced Animation */}
@@ -284,9 +284,8 @@ const Header = () => {
               exit="closed"
             >
               <div className="flex flex-col h-full relative overflow-hidden">
-                {/* Decorative Background Elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
-                <div className="absolute bottom-20 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl" />
+                {/* <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
+                <div className="absolute bottom-20 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl" /> */}
                 
                 {/* Menu Header */}
                 <div className="flex items-center justify-between p-6 border-b border-primary/10 bg-gradient-to-r from-primary/5 to-transparent">
@@ -295,13 +294,14 @@ const Header = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Main Menu
                   </motion.h2>
-                  <Button
+                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-xl border border-primary/20 hover:border-primary/40"
+                    className="cursor-pointer w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-xl border border-primary/20 hover:border-primary/40"
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label="Close menu"
                   >

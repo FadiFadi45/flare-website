@@ -143,7 +143,7 @@ const Services = () => {
 
         {/* CTA Section */}
         <AnimatedSection className="text-center">
-          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl px-8 py-12">
             <AnimatedText>
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
             </AnimatedText>

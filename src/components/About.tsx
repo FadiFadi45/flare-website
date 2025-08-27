@@ -74,7 +74,7 @@ const About = () => {
         >
           {/* Mission */}
           <motion.div variants={fadeInLeft}>
-            <AnimatedCard delay={0.2}>
+            <AnimatedCard delay={0.2} >
               <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
                 <div className="absolute inset-0 gradient-primary opacity-5 group-hover:opacity-10 transition-smooth" />
                 <div className="relative z-10 p-10 h-full">
