@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Target, 
   Eye, 
@@ -8,16 +6,12 @@ import {
   Settings, 
   TrendingUp, 
   BarChart3,
-  Shield,
-  Play,
-  Zap,
-  ArrowRight
+  Shield
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
-import { AnimatedButton } from "@/components/animations/AnimatedButton";
 import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 // Core services for homepage summary
@@ -200,61 +194,6 @@ const About = () => {
           </div>
         </AnimatedSection>
 
-
-        {/* Why Choose Flare Media */}
-        <AnimatedSection>
-          <div className="bg-secondary/30 backdrop-blur-lg rounded-2xl p-8 lg:p-12 text-center">
-            <div className="flex items-center justify-center mb-6">
-              <motion.div 
-                className="w-16 h-16 gradient-logo rounded-2xl flex items-center justify-center"
-                whileHover={{ 
-                  scale: 1.1, 
-                  rotate: 5,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <Zap className="w-8 h-8 text-primary-foreground" />
-              </motion.div>
-            </div>
-            <AnimatedText>
-              <h3 className="mb-6">
-                Why Choose <span className="text-gradient-logo">Flare Media?</span>
-              </h3>
-            </AnimatedText>
-            <AnimatedText delay={0.2}>
-              <p className="text-muted-foreground mb-8 max-w-4xl mx-auto">
-                We simplify the complexity of digital content so you can focus on what matters: 
-                creating, growing, and succeeding. Whether you're an independent creator, a growing 
-                brand, or a global company, our solutions are designed to align with your goals and 
-                scale with your ambitions.
-              </p>
-            </AnimatedText>
-            <motion.div 
-              className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ 
-                opacity: 1, 
-                y: 0,
-                transition: { delay: 0.4, duration: 0.6 }
-              }}
-              viewport={{ once: true }}
-            >
-              <Button variant="hero" size="lg">
-                <Play className="w-5 h-5 mr-2" />
-                Partner with Us
-              </Button>
-              <Button variant="minimal" size="lg">
-                Learn More
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </motion.div>
-            <AnimatedText delay={0.6}>
-              <p className="text-lg font-semibold text-gradient-logo mt-8">
-                Let us illuminate your path to digital success.
-              </p>
-            </AnimatedText>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );
