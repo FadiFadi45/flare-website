@@ -105,10 +105,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:items-stretch">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-card">
+            <Card className="shadow-card h-full">
               <CardHeader>
                 <CardTitle>Send us a message</CardTitle>
               </CardHeader>
@@ -227,7 +227,7 @@ const Contact = () => {
 
           {/* Contact Info & Social */}
           <div>
-            <Card className="shadow-card">
+            <Card className="shadow-card h-full">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
               </CardHeader>
