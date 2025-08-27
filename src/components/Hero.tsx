@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin } from "lucide-react";
+import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-cinematic-brand.jpg";
@@ -8,10 +8,10 @@ import { AnimatedText } from "@/components/animations/AnimatedText";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
 
 const socialLinks = [
-  { icon: Youtube, label: "YouTube", url: "#" },
-  { icon: Instagram, label: "Instagram", url: "#" },
-  { icon: Twitter, label: "Twitter", url: "#" },
-  { icon: Linkedin, label: "LinkedIn", url: "#" }
+  { icon: Instagram, label: "Instagram", url: "#", color: "from-pink-500 to-orange-400" },
+  { icon: Youtube, label: "YouTube", url: "#", color: "from-red-500 to-red-600" },
+  { icon: Facebook, label: "Facebook", url: "#", color: "from-blue-500 to-blue-600" },
+  { icon: Twitter, label: "Twitter", url: "#", color: "from-blue-400 to-blue-500" }
 ];
 
 const Hero = () => {
@@ -67,65 +67,131 @@ const Hero = () => {
 
         </motion.div>
 
-        {/* Enhanced Follow Us Section */}
+        {/* Modern Connect & Create Section */}
         <AnimatedSection delay={1.0}>
           <motion.div 
-            className="mt-20"
-            initial={{ opacity: 0, y: 30 }}
+            className="mt-24"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center space-x-3 bg-background/20 backdrop-blur-md rounded-2xl px-8 py-4 border border-primary/20">
-              <div className="text-center">
-                <motion.p 
-                  className="text-sm font-semibold text-gradient-logo mb-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.4, duration: 0.6 }}
-                >
-                  Connect & Create
-                </motion.p>
+            <div className="relative">
+              {/* Main Container */}
+              <div className="mx-auto max-w-md">
+                {/* Header Section */}
+                <div className="text-center mb-8">
+                  <motion.h3 
+                    className="text-2xl font-bold text-gradient-logo mb-3 tracking-tight"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.4, duration: 0.6 }}
+                  >
+                    Connect & Create
+                  </motion.h3>
+                  <motion.p 
+                    className="text-sm text-muted-foreground/90 font-medium tracking-wide"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.6, duration: 0.6 }}
+                  >
+                    Join our creative community
+                  </motion.p>
+                </div>
+
+                {/* Social Icons Grid */}
                 <motion.div 
-                  className="flex items-center space-x-3"
+                  className="flex items-center justify-center gap-4"
                   variants={staggerContainer}
                   initial="hidden"
                   animate="visible"
-                  transition={{ delay: 1.6 }}
+                  transition={{ delay: 1.8 }}
                 >
                   {socialLinks.map((social, index) => (
                     <motion.div
-                      key={index}
-                      variants={scaleIn}
-                      custom={index}
+                      key={social.label}
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.8, y: 20 },
+                        visible: { 
+                          opacity: 1, 
+                          scale: 1, 
+                          y: 0,
+                          transition: { 
+                            delay: index * 0.1,
+                            duration: 0.5,
+                            ease: "easeOut"
+                          }
+                        }
+                      }}
                       whileHover={{ 
-                        scale: 1.2, 
-                        rotate: 5,
-                        transition: { duration: 0.2 }
+                        scale: 1.15,
+                        y: -8,
+                        transition: { duration: 0.2, ease: "easeOut" }
                       }}
                       whileTap={{ scale: 0.95 }}
+                      className="group"
                     >
-                      <Button 
-                        variant="ghost" 
+                      <Button
+                        variant="ghost"
                         size="sm"
-                        className="h-12 w-12 p-0 rounded-2xl gradient-card border border-primary/20 hover:border-primary/40 hover:shadow-glow transition-all duration-300 group"
+                        className="relative h-14 w-14 p-0 rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 hover:border-primary/30 overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/20"
                         asChild
                       >
                         <a href={social.url} aria-label={social.label}>
-                          <social.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                          {/* Gradient Background */}
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-accent/20" />
+                          
+                          {/* Icon */}
+                          <social.icon className="w-6 h-6 text-foreground/80 group-hover:text-primary transition-colors duration-300 relative z-10" />
+                          
+                          {/* Glow Effect */}
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-2xl blur-xl" />
+                          </div>
                         </a>
                       </Button>
                     </motion.div>
                   ))}
                 </motion.div>
+
+                {/* Bottom Tagline */}
                 <motion.div 
-                  className="mt-4 text-xs text-muted-foreground/80"
+                  className="text-center mt-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.6 }}
+                  transition={{ delay: 2.2, duration: 0.8 }}
                 >
-                  Stay connected with latest updates
+                  <p className="text-xs text-muted-foreground/60 font-medium tracking-wider uppercase">
+                    Stay Connected
+                  </p>
                 </motion.div>
               </div>
+
+              {/* Decorative Elements */}
+              <motion.div 
+                className="absolute -top-4 -left-4 w-2 h-2 bg-primary/30 rounded-full blur-sm"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div 
+                className="absolute -bottom-4 -right-4 w-2 h-2 bg-accent/30 rounded-full blur-sm"
+                animate={{ 
+                  scale: [1.2, 1, 1.2],
+                  opacity: [0.6, 0.3, 0.6]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.5
+                }}
+              />
             </div>
           </motion.div>
         </AnimatedSection>
