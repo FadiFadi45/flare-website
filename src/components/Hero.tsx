@@ -83,7 +83,7 @@ const Hero = () => {
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
                 <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
-                  Transforming content creation through innovative digital solutions
+                  Own the Legacy. Stream the Culture. Relive the Moments — with FLARE
                 </p>
                 
                 {/* Feature Pills - Simplified for mobile */}
