@@ -120,7 +120,7 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
                 >
-                  Empowering creators and brands across TV, film, and digital platforms with cutting-edge production, optimization, and monetization strategies.
+                  At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
                 </motion.p>
               </motion.div>
               
