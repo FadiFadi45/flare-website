@@ -16,65 +16,46 @@ export const ScrollText3D = ({ children, className = "" }: ScrollText3DProps) =>
   useEffect(() => {
     if (!textRef.current || !containerRef.current) return;
 
-    const text = children;
-    const sentences = text.split('. ');
-    const firstLine = sentences[0] + '.';
-    const restOfText = sentences.slice(1).join('. ');
-    
-    const allWords = text.split(' ');
-    const firstLineWords = firstLine.split(' ');
-    const firstLineWordCount = firstLineWords.length;
-
-    const wrappedText = allWords.map((word, index) => {
-      const isFirstLine = index < firstLineWordCount;
-      return `<span class="word-3d ${isFirstLine ? 'first-line' : 'rest-line'}" style="display: inline-block; perspective: 1000px;">
+    const words = children.split(' ');
+    const wrappedText = words.map((word, index) => 
+      `<span class="word-3d" style="display: inline-block; perspective: 1000px;">
         <span style="display: inline-block; transform-style: preserve-3d;">${word}</span>
-      </span>${index < allWords.length - 1 ? ' ' : ''}`;
-    }).join('');
+      </span>${index < words.length - 1 ? ' ' : ''}`
+    ).join('');
     
     textRef.current.innerHTML = wrappedText;
 
     const wordElements = textRef.current.querySelectorAll('.word-3d span');
-    const firstLineElements = textRef.current.querySelectorAll('.first-line span');
-    const restLineElements = textRef.current.querySelectorAll('.rest-line span');
 
-    // Initial state - show first line, hide rest
-    gsap.set(firstLineElements, {
-      opacity: 1,
-      rotateX: 0,
-      y: 0,
-      transformOrigin: 'center center',
-    });
-
-    gsap.set(restLineElements, {
+    // Initial state
+    gsap.set(wordElements, {
       opacity: 0,
       rotateX: -90,
       y: 50,
       transformOrigin: 'center center',
     });
 
-    // Create pinned scroll-triggered animation
+    // Create scroll-triggered animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: 'top 30%',
-        end: `+=${restLineElements.length * 50}`,
+        start: 'top 80%',
+        end: 'bottom 20%',
         scrub: 1,
-        pin: true,
-        anticipatePin: 1,
+        toggleActions: 'play none none reverse',
       }
     });
 
-    tl.to(restLineElements, {
+    tl.to(wordElements, {
       opacity: 1,
       rotateX: 0,
       y: 0,
       duration: 1,
       stagger: {
-        each: 0.03,
+        each: 0.05,
         from: 'start',
       },
-      ease: 'power2.out',
+      ease: 'power3.out',
     });
 
     // Add hover effect for each word
@@ -108,7 +89,7 @@ export const ScrollText3D = ({ children, className = "" }: ScrollText3DProps) =>
     <div 
       ref={containerRef}
       style={{ perspective: '1000px' }}
-      className="relative min-h-[300px]"
+      className="relative"
     >
       <p
         ref={textRef}
