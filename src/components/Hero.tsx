@@ -5,6 +5,7 @@ import { useRef } from "react";
 import heroImage from "@/assets/hero-cinematic-brand.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
+import { ScrollText3D } from "@/components/animations/ScrollText3D";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
 
 const socialLinks = [
@@ -113,15 +114,12 @@ const Hero = () => {
                   ))}
                 </motion.div>
                 
-                {/* Secondary Description - Hidden on mobile */}
-                <motion.p 
-                  className="hidden sm:block text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.6, duration: 0.8 }}
-                >
-                  At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
-                </motion.p>
+                {/* Secondary Description - Hidden on mobile with 3D Scroll Animation */}
+                <div className="hidden sm:block">
+                  <ScrollText3D className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0">
+                    At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
+                  </ScrollText3D>
+                </div>
               </motion.div>
               
               {/* Decorative Elements - Hidden on mobile */}
