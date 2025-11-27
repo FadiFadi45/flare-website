@@ -44,12 +44,6 @@
     --gradient-card: linear-gradient(135deg, hsl(210 15% 12%), hsl(267 65% 55% / 0.08));
     --gradient-logo: linear-gradient(135deg, hsl(267 65% 55%), hsl(318 45% 58%));
     --gradient-fresh: linear-gradient(135deg, hsl(267 65% 55% / 0.1), hsl(318 45% 58% / 0.05));
-    
-    /* Cinematic Dark Gradients */
-    --gradient-cinematic: radial-gradient(ellipse at top, hsl(220 25% 12%), hsl(220 30% 4%));
-    --gradient-depth: linear-gradient(180deg, hsl(220 30% 4%), hsl(220 25% 8%), hsl(220 30% 4%));
-    --gradient-volumetric: radial-gradient(circle at center, hsl(217 91% 60% / 0.08), transparent 70%);
-    --gradient-holographic: linear-gradient(135deg, hsl(217 91% 60% / 0.15), hsl(267 65% 55% / 0.12), hsl(318 45% 58% / 0.1));
 
     /* Vibrant & Dynamic Shadows */
     --shadow-glow: 0 0 35px hsl(267 65% 55% / 0.3);
