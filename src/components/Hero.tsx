@@ -6,6 +6,7 @@ import heroImage from "@/assets/hero-cinematic-brand.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { ScrollText3D } from "@/components/animations/ScrollText3D";
+import { HeroEffects } from "@/components/animations/HeroEffects";
 import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
 
 const socialLinks = [
@@ -47,6 +48,9 @@ const Hero = () => {
         {/* Minimal overlay for text readability */}
         <div className="absolute inset-0 gradient-fresh opacity-20"></div>
       </motion.div>
+
+      {/* Animated Effects Layer */}
+      <HeroEffects />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
