@@ -87,36 +87,9 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-8 sm:mb-12 lg:mb-16 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
                   Own the Legacy. Stream the Culture. Relive the Moments — with FLARE
                 </p>
-                
-                {/* Feature Pills - Simplified for mobile */}
-                <motion.div 
-                  className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8 px-2"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.0, duration: 0.6 }}
-                >
-                  {[
-                    { text: "Premium Production", show: "flex" },
-                    { text: "Channel Management", show: "flex" }, 
-                    { text: "Strategic Marketing", show: "hidden sm:flex" },
-                    { text: "Multi-Platform Distribution", show: "hidden sm:flex" }
-                  ].map((feature, index) => (
-                    <motion.div
-                      key={feature.text}
-                      className={`${feature.show} flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300`}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary/60 rounded-full mr-1.5 sm:mr-2" />
-                      <span>{feature.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
                 
                 {/* Secondary Description - Hidden on mobile with 3D Scroll Animation */}
                 <div className="hidden sm:block">
