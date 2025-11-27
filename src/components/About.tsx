@@ -59,7 +59,7 @@ const About = () => {
           </AnimatedText>
           <AnimatedText delay={0.4}>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Crafting <span className="text-gradient-logo font-semibold">Narratives</span> That Resonate
+              We're FLARE — a digital media company breathing new life into timeless stories. By owning and streaming iconic entertainment IPs, we turn nostalgia into vibrant digital experiences. Our content lives where audiences live on social platforms, in feeds, and across screens. We blend legacy with innovation to connect generations through storytelling that matters.
             </p>
           </AnimatedText>
         </AnimatedSection>
@@ -95,9 +95,7 @@ const About = () => {
                   </div>
                   <CardContent className="p-0">
                     <p className="text-foreground leading-relaxed">
-                      In today's fast-paced, ever-changing digital world, Flare helps businesses 
-                      stand out and authentically resonate with their audience. We are in the 
-                      storytelling business, crafting narratives that captivate and convert.
+                      To transform iconic entertainment IPs into engaging digital experiences. We connect audiences with nostalgic stories through innovative streaming strategies, driving cultural relevance, and monetization across social platforms.
                     </p>
                   </CardContent>
                 </div>
@@ -128,9 +126,7 @@ const About = () => {
                   </div>
                   <CardContent className="p-0">
                     <p className="text-foreground leading-relaxed">
-                      To be the leading catalysts of digital transformation, empowering creators 
-                      and brands to reach their full potential through innovative media solutions 
-                      and strategic storytelling.
+                      To lead the future of digital media by reviving legacy content, creating meaningful audience connections, and shaping a vibrant ecosystem where timeless stories thrive.
                     </p>
                   </CardContent>
                 </div>
@@ -166,11 +162,7 @@ const About = () => {
                 <AnimatedText delay={0.3}>
                   <div className="max-w-5xl mx-auto">
                     <p className="text-foreground leading-relaxed text-center mb-8">
-                      At <span className="text-gradient-logo font-semibold">Flare Media LLC</span>, we are your trusted partner in maximizing the potential 
-                      of digital platforms. Based on years of expertise and a deep understanding of 
-                      the evolving media landscape, we specialize in empowering creators, brands, and 
-                      businesses to thrive in the digital space through innovative strategies, 
-                      optimized management, and cutting-edge solutions.
+                      We are FLARE — a digital media company redefining the presence of legacy entertainment online. We own and manage iconic - series - IPs, transforming them into engaging, monetizable content across today's most dynamic social platforms. Our mission is to connect generations through storytelling, blending nostalgia with innovation to spark meaningful audience experiences.
                     </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
