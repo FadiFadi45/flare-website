@@ -13,6 +13,10 @@ import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/animations";
+import missionBg from "@/assets/section-mission.jpg";
+import visionBg from "@/assets/section-vision.jpg";
+import whoWeAreBg from "@/assets/section-who-we-are.jpg";
+import aboutBg from "@/assets/section-about.jpg";
 
 // Core services for homepage summary
 const coreServices = [
@@ -76,7 +80,11 @@ const About = () => {
           <motion.div variants={fadeInLeft}>
             <AnimatedCard delay={0.2} >
               <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
-                <div className="absolute inset-0 gradient-primary opacity-5 group-hover:opacity-10 transition-smooth" />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-smooth"
+                  style={{ backgroundImage: `url(${missionBg})` }}
+                />
+                <div className="absolute inset-0 gradient-primary opacity-40 group-hover:opacity-50 transition-smooth" />
                 <div className="relative z-10 p-10 h-full">
                   <div className="flex items-start space-x-4 mb-8">
                     <motion.div 
@@ -107,7 +115,11 @@ const About = () => {
           <motion.div variants={fadeInRight}>
             <AnimatedCard delay={0.4}>
               <Card className="relative overflow-hidden shadow-hero hover:shadow-glow transition-smooth h-full group">
-                <div className="absolute inset-0 gradient-accent opacity-5 group-hover:opacity-10 transition-smooth" />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-smooth"
+                  style={{ backgroundImage: `url(${visionBg})` }}
+                />
+                <div className="absolute inset-0 gradient-accent opacity-40 group-hover:opacity-50 transition-smooth" />
                 <div className="relative z-10 p-10 h-full">
                   <div className="flex items-start space-x-4 mb-8">
                     <motion.div 
@@ -139,7 +151,11 @@ const About = () => {
         <AnimatedSection className="mb-20">
           <div className="relative">
             <Card className="relative overflow-hidden shadow-hero border-gradient">
-              <div className="absolute inset-0 gradient-card opacity-30" />
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-15"
+                style={{ backgroundImage: `url(${whoWeAreBg})` }}
+              />
+              <div className="absolute inset-0 gradient-card opacity-50" />
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 gradient-logo rounded-full" />
               
               <div className="relative z-10 p-12 lg:p-16">
