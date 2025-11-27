@@ -1,19 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-cinematic-brand.jpg";
-import { AnimatedSection } from "@/components/animations/AnimatedSection";
-import { AnimatedText } from "@/components/animations/AnimatedText";
-import { ScrollText3D } from "@/components/animations/ScrollText3D";
-import { staggerContainer, fadeInUp, scaleIn } from "@/lib/animations";
-
-const socialLinks = [
-  { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/flare.media0/", color: "from-pink-500 to-orange-400" },
-  { icon: Youtube, label: "YouTube", url: "https://www.youtube.com/@FlareArtsMedia", color: "from-red-500 to-red-600" },
-  { icon: Facebook, label: "Facebook", url: "https://www.facebook.com/Flare.media0/", color: "from-blue-500 to-blue-600" },
-  { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/company/flare-media-llc/", color: "from-blue-600 to-blue-700" }
-];
+import { ParticleField } from "@/components/animations/ParticleField";
+import { WaveElement } from "@/components/animations/WaveElement";
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -22,271 +10,210 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <section 
       ref={heroRef}
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Lighter, More Dynamic Background with Parallax */}
+      {/* Cinematic Dark Background with Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(220_25%_12%),_hsl(220_30%_4%))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,_hsl(220_30%_4%),_hsl(220_25%_8%),_hsl(220_30%_4%))]" />
+      
+      {/* Volumetric Lighting Effect */}
       <motion.div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(217_91%_60%_/_0.08),_transparent_70%)]"
+        style={{ opacity }}
+      />
+
+      {/* Particle Field */}
+      <ParticleField />
+
+      {/* 3D Centerpiece - Abstract Wave Element */}
+      <motion.div 
+        className="absolute inset-0"
         style={{ 
-          backgroundImage: `url(${heroImage})`,
-          transform: "translateZ(0)", // Force GPU acceleration
-          y 
+          opacity,
+          scale,
+          transformStyle: 'preserve-3d',
+          perspective: '1000px'
         }}
       >
-        <motion.div 
-          className="absolute inset-0 bg-background/15 will-change-opacity"
-          style={{ opacity }}
-        ></motion.div>
-        {/* Minimal overlay for text readability */}
-        <div className="absolute inset-0 gradient-fresh opacity-20"></div>
+        <WaveElement />
       </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div 
-          className="max-w-4xl mx-auto"
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
+      {/* Floating Depth Layers */}
+      {[...Array(3)].map((_, index) => (
+        <motion.div
+          key={`layer-${index}`}
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            y: useTransform(scrollYProgress, [0, 1], [0, (index + 1) * 50]),
+          }}
         >
-          {/* Hero Title - Hidden on mobile */}
-          <AnimatedSection>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="mb-6 sm:mb-8 hidden sm:block"
-            >
-              <motion.div
-                className="h-1 w-16 sm:w-24 bg-gradient-primary rounded-full mx-auto"
-                initial={{ width: 0 }}
-                animate={{ width: 64 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-              />
-            </motion.div>
-          </AnimatedSection>
+          <div 
+            className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
+            style={{
+              background: index % 2 === 0 
+                ? 'radial-gradient(circle, hsl(217 91% 60% / 0.3), transparent)'
+                : 'radial-gradient(circle, hsl(267 65% 55% / 0.2), transparent)',
+              top: `${20 + index * 25}%`,
+              left: `${10 + index * 30}%`,
+            }}
+          />
+        </motion.div>
+      ))}
 
-          {/* Professional Subtitle with Enhanced Design */}
-          <AnimatedSection delay={0.6}>
-            <div className="relative max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-              {/* Main Subtitle */}
+      {/* Main Content */}
+      <motion.div 
+        className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        style={{ y }}
+      >
+        <motion.div 
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          {/* Top Accent Line */}
+          <motion.div
+            className="h-px w-32 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent mx-auto mb-12"
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 128, opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
+          />
+
+          {/* Main Headline */}
+          <motion.h1
+            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight tracking-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300 drop-shadow-2xl">
+              Own the Legacy
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-xl sm:text-2xl lg:text-3xl text-blue-100/80 font-light mb-6 max-w-3xl mx-auto leading-relaxed tracking-wide"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            Reviving Classic IPs into Modern Digital Experiences
+          </motion.p>
+
+          {/* Description */}
+          <motion.div
+            className="max-w-2xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <p className="text-base sm:text-lg text-blue-200/60 font-light leading-relaxed tracking-wide">
+              At FLARE, we transform nostalgia into streaming experiences. 
+              From classic drama to cultural gems, our content bridges generations 
+              and platforms with precision and passion.
+            </p>
+          </motion.div>
+
+          {/* Feature Tags */}
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-4 mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+          >
+            {['Timeless IPs', 'Digital Revival', 'Multi-Platform'].map((tag, index) => (
               <motion.div
-                className="relative px-2 sm:px-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
+                key={tag}
+                className="relative group"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
-                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
-                  Own the Legacy. Stream the Culture. Relive the Moments — with FLARE
-                </p>
-                
-                {/* Feature Pills - Simplified for mobile */}
-                <motion.div 
-                  className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8 px-2"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.0, duration: 0.6 }}
-                >
-                  {[
-                    { text: "Premium Production", show: "flex" },
-                    { text: "Channel Management", show: "flex" }, 
-                    { text: "Strategic Marketing", show: "hidden sm:flex" },
-                    { text: "Multi-Platform Distribution", show: "hidden sm:flex" }
-                  ].map((feature, index) => (
-                    <motion.div
-                      key={feature.text}
-                      className={`${feature.show} flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-background/30 backdrop-blur-sm border border-primary/30 rounded-full text-xs sm:text-sm font-medium text-foreground drop-shadow-md hover:text-primary hover:border-primary/60 transition-all duration-300`}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary/60 rounded-full mr-1.5 sm:mr-2" />
-                      <span>{feature.text}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
-                
-                {/* Secondary Description - Hidden on mobile with 3D Scroll Animation */}
-                <div className="hidden sm:block">
-                  <ScrollText3D className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0">
-                    At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
-                  </ScrollText3D>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative px-6 py-2.5 bg-blue-950/30 backdrop-blur-xl border border-blue-400/20 rounded-full">
+                  <span className="text-sm font-medium text-blue-200/90 tracking-wide">
+                    {tag}
+                  </span>
                 </div>
               </motion.div>
-              
-              {/* Decorative Elements - Hidden on mobile */}
-              <div className="hidden sm:block absolute -top-2 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
-              <div className="hidden sm:block absolute -bottom-2 right-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
-          </AnimatedSection>
-
-
-        </motion.div>
-
-        {/* Modern Connect & Create Section */}
-        <AnimatedSection delay={1.0}>
-          <motion.div 
-            className="mt-12 sm:mt-16 lg:mt-20"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="relative px-4 sm:px-0">
-              {/* Main Container */}
-              <div className="mx-auto max-w-sm sm:max-w-md">
-                {/* Header Section - Simplified for mobile */}
-                <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-                  <motion.h3 
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-gradient-logo mb-1 sm:mb-2 tracking-tight drop-shadow-lg shadow-black/50"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.4, duration: 0.6 }}
-                  >
-                    Connect & Create
-                  </motion.h3>
-                  <motion.p 
-                    className="hidden sm:block text-xs sm:text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.6, duration: 0.6 }}
-                  >
-                    Join our creative community
-                  </motion.p>
-                </div>
-
-                {/* Social Icons Grid */}
-                <motion.div 
-                  className="flex items-center justify-center gap-3 sm:gap-4"
-                  variants={staggerContainer}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 1.8 }}
-                >
-                  {socialLinks.map((social, index) => (
-                    <motion.div
-                      key={social.label}
-                      variants={{
-                        hidden: { opacity: 0, scale: 0.8, y: 20 },
-                        visible: { 
-                          opacity: 1, 
-                          scale: 1, 
-                          y: 0,
-                          transition: { 
-                            delay: index * 0.1,
-                            duration: 0.5,
-                            ease: "easeOut"
-                          }
-                        }
-                      }}
-                      whileHover={{ 
-                        scale: 1.1,
-                        y: -4,
-                        transition: { duration: 0.2, ease: "easeOut" }
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      className="group"
-                    >
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="relative h-12 w-12 sm:h-14 sm:w-14 p-0 rounded-xl sm:rounded-2xl bg-background/10 backdrop-blur-xl border border-white/10 hover:border-primary/30 overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/20"
-                        asChild
-                      >
-                        <a href={social.url} aria-label={social.label}>
-                          {/* Gradient Background */}
-                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-accent/20" />
-                          
-                          {/* Icon */}
-                          <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/80 group-hover:text-primary transition-colors duration-300 relative z-10" />
-                          
-                          {/* Glow Effect */}
-                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-xl sm:rounded-2xl blur-xl" />
-                          </div>
-                        </a>
-                      </Button>
-                    </motion.div>
-                  ))}
-                </motion.div>
-
-                {/* Bottom Tagline - Hidden on mobile */}
-                <motion.div 
-                  className="hidden sm:block text-center mt-4 sm:mt-6"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.2, duration: 0.8 }}
-                >
-                  <p className="text-xs text-muted-foreground/60 font-medium tracking-wider uppercase">
-                    Stay Connected
-                  </p>
-                </motion.div>
-              </div>
-
-              {/* Decorative Elements - Hidden on mobile */}
-              <motion.div 
-                className="hidden sm:block absolute -top-4 -left-4 w-2 h-2 bg-primary/30 rounded-full blur-sm"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div 
-                className="hidden sm:block absolute -bottom-4 -right-4 w-2 h-2 bg-accent/30 rounded-full blur-sm"
-                animate={{ 
-                  scale: [1.2, 1, 1.2],
-                  opacity: [0.6, 0.3, 0.6]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.5
-                }}
-              />
-            </div>
+            ))}
           </motion.div>
-        </AnimatedSection>
-      </div>
 
-      {/* Enhanced Scroll Indicator */}
+          {/* Decorative Elements */}
+          <motion.div
+            className="absolute top-1/4 left-[10%] w-2 h-2 bg-blue-400/60 rounded-full blur-sm"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.4, 0.8, 0.4],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+          <motion.div
+            className="absolute top-1/3 right-[15%] w-1.5 h-1.5 bg-purple-400/50 rounded-full blur-sm"
+            animate={{
+              scale: [1.5, 1, 1.5],
+              opacity: [0.8, 0.3, 0.8],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1,
+            }}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ 
           opacity: 1, 
-          y: [0, 8, 0],
-          transition: {
-            opacity: { delay: 2, duration: 0.5 },
-            y: { repeat: Infinity, duration: 2.5, ease: "easeInOut" }
-          }
+          y: 0,
         }}
-        whileHover={{ scale: 1.1 }}
+        transition={{ 
+          opacity: { delay: 2, duration: 0.8 },
+          y: { delay: 2, duration: 0.8 }
+        }}
       >
-        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-primary/60 rounded-full flex justify-center shadow-soft backdrop-blur-sm bg-background/10">
-          <motion.div 
-            className="w-1 h-2 sm:h-3 bg-primary rounded-full mt-1.5 sm:mt-2"
-            animate={{ 
-              y: [0, 10, 0],
-              opacity: [1, 0.4, 1],
-              scale: [1, 0.8, 1]
-            }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-          ></motion.div>
-        </div>
+        <motion.div
+          className="flex flex-col items-center gap-2 cursor-pointer group"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+        >
+          <div className="w-6 h-10 border-2 border-blue-400/40 rounded-full flex justify-center backdrop-blur-sm bg-blue-950/20 group-hover:border-blue-400/60 transition-colors">
+            <motion.div 
+              className="w-1.5 h-3 bg-blue-400/80 rounded-full mt-2"
+              animate={{ 
+                y: [0, 12, 0],
+                opacity: [1, 0.3, 1],
+              }}
+              transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+            />
+          </div>
+          <span className="text-xs text-blue-300/50 font-light tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+            Scroll
+          </span>
+        </motion.div>
       </motion.div>
+
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };
