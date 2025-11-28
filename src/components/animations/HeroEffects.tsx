@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface Particle {
   x: number;
@@ -21,13 +21,6 @@ interface LightStreak {
 
 export const HeroEffects = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const holographicOpacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -155,7 +148,7 @@ export const HeroEffects = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none">
       {/* Canvas for particles and light streaks */}
       <canvas
         ref={canvasRef}
@@ -165,8 +158,7 @@ export const HeroEffects = () => {
 
       {/* Holographic overlay effects */}
       <motion.div
-        className="absolute inset-0"
-        style={{ opacity: holographicOpacity }}
+        className="absolute inset-0 opacity-30"
       >
         {/* Holographic grid */}
         <div 
