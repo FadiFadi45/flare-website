@@ -6,10 +6,21 @@ import { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems = ['Home', 'About', 'Services', 'Productions', 'Channels', 'Contact'];
+
+  // Handle scroll for navbar background change
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -133,7 +144,16 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#00000026]">
+      <motion.header 
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+        initial={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
+        animate={{
+          backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.15)',
+          backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
+          borderBottom: isScrolled ? '1px solid rgba(147, 51, 234, 0.2)' : '1px solid transparent',
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo with Enhanced Animation */}
@@ -195,7 +215,7 @@ const Header = () => {
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="nav-link"
+                  className="relative px-4 py-2 text-sm font-medium text-foreground/90 hover:text-foreground transition-colors duration-300 group"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ 
                     opacity: 1, 
@@ -203,9 +223,8 @@ const Header = () => {
                     transition: { delay: 0.6 + (index * 0.1) }
                   }}
                   whileHover={{ 
-                    y: -3,
-                    scale: 1.05,
-                    transition: { type: "spring", stiffness: 400 }
+                    y: -2,
+                    transition: { type: "spring", stiffness: 300, damping: 20 }
                   }}
                   onClick={(e) => {
                     e.preventDefault();
@@ -213,6 +232,20 @@ const Header = () => {
                   }}
                 >
                   {item}
+                  {/* Underline animation */}
+                  <motion.span
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                  {/* Glow effect on hover */}
+                  <motion.span
+                    className="absolute inset-0 bg-primary/5 rounded-lg -z-10"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
                 </motion.a>
               ))}
             </motion.nav>
@@ -257,7 +290,7 @@ const Header = () => {
             </motion.div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
