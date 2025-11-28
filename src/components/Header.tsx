@@ -7,20 +7,35 @@ import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems = ['Home', 'About', 'Services', 'Productions', 'Channels', 'Contact'];
 
-  // Handle scroll for navbar background change
+  // Handle scroll for navbar visibility and background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Show/hide based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past threshold
+        setIsVisible(false);
+      } else {
+        // Scrolling up or at top
+        setIsVisible(true);
+      }
+      
+      // Background blur effect
+      setIsScrolled(currentScrollY > 50);
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -97,19 +112,23 @@ const Header = () => {
   // Mobile menu animation variants
   const menuVariants = {
     closed: {
-      x: '100%',
+      opacity: 0,
+      scale: 0.95,
+      x: 20,
+      y: -20,
       transition: {
-        type: 'spring' as const,
-        stiffness: 400,
-        damping: 40
+        duration: 0.25,
+        ease: [0.32, 0, 0.67, 0] as const
       }
     },
     open: {
-      x: '0%',
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      y: 0,
       transition: {
-        type: 'spring' as const,
-        stiffness: 400,
-        damping: 40
+        duration: 0.3,
+        ease: [0.33, 1, 0.68, 1] as const
       }
     }
   };
@@ -144,21 +163,40 @@ const Header = () => {
 
   return (
     <>
-      <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-        initial={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
-        animate={{
-          backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.15)',
-          backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
-          borderBottom: isScrolled ? '1px solid rgba(147, 51, 234, 0.2)' : '1px solid transparent',
-        }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 py-4">
+      {/* Circular Pill Navbar Container */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6">
+        <motion.header 
+          className="mt-4 sm:mt-6 w-full max-w-6xl"
+          initial={{ y: 0, opacity: 1 }}
+          animate={{
+            y: isVisible ? 0 : -120,
+            opacity: isVisible ? 1 : 0,
+          }}
+          transition={{ 
+            duration: 0.4, 
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
+        >
+          <motion.div
+            className="relative rounded-full shadow-2xl overflow-hidden"
+            initial={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+            animate={{
+              backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: isScrolled ? 'blur(24px)' : 'blur(12px)',
+            }}
+            transition={{ duration: 0.3 }}
+            style={{
+              border: '1px solid rgba(147, 51, 234, 0.2)',
+              boxShadow: isScrolled 
+                ? '0 8px 32px rgba(147, 51, 234, 0.2), 0 0 0 1px rgba(147, 51, 234, 0.1)' 
+                : '0 4px 20px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            <div className="px-6 sm:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo with Enhanced Animation */}
             <motion.div 
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2 sm:space-x-3 group"
               variants={logoAnimation}
               initial="hidden"
               animate="visible"
@@ -168,28 +206,21 @@ const Header = () => {
                 <motion.img 
                   src="/lovable-uploads/871b753f-ac14-4513-8da8-8f974ba0ea9c.png" 
                   alt="Flare Media Logo" 
-                  className="h-8 sm:h-10 w-auto transition-spring"
-                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  className="h-7 sm:h-9 w-auto transition-spring"
+                  whileHover={{ scale: 1.08, rotate: 1 }}
                 />
-                <motion.div 
-                  className="absolute inset-0 rounded-lg opacity-0 gradient-fresh"
-                  whileHover={{ 
-                    opacity: 0.3,
-                    transition: { duration: 0.3 }
-                  }}
-                ></motion.div>
-                {/* Enhanced light sweep effect */}
+                {/* Light sweep effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 rounded-full"
                   initial={{ x: '-100%', opacity: 0 }}
                   animate={{
                     x: ['100%', '200%'],
-                    opacity: [0, 0.6, 0],
+                    opacity: [0, 0.5, 0],
                     transition: {
-                      delay: 1.5,
-                      duration: 1.8,
+                      delay: 2,
+                      duration: 2,
                       repeat: Infinity,
-                      repeatDelay: 6,
+                      repeatDelay: 8,
                       ease: "easeInOut"
                     }
                   }}
@@ -199,15 +230,13 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <motion.nav 
-              className="hidden md:flex items-center space-x-1"
-              initial={{ opacity: 0, y: -20 }}
+              className="hidden md:flex items-center space-x-2 lg:space-x-3"
+              initial={{ opacity: 0 }}
               animate={{ 
-                opacity: 1, 
-                y: 0,
+                opacity: 1,
                 transition: {
-                  delay: 0.5,
+                  delay: 0.3,
                   duration: 0.6,
-                  staggerChildren: 0.1
                 }
               }}
             >
@@ -215,36 +244,30 @@ const Header = () => {
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="relative px-4 py-2 text-sm font-medium text-foreground/90 hover:text-foreground transition-colors duration-300 group"
+                  className="relative px-3 lg:px-4 py-1.5 text-xs lg:text-sm font-medium text-foreground/85 hover:text-foreground transition-colors duration-300 group rounded-full"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 0.6 + (index * 0.1) }
+                    transition: { delay: 0.4 + (index * 0.08) }
                   }}
                   whileHover={{ 
-                    y: -2,
-                    transition: { type: "spring", stiffness: 300, damping: 20 }
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400, damping: 20 }
                   }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
                 >
                   {item}
-                  {/* Underline animation */}
+                  {/* Pill background on hover */}
                   <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent origin-left"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  />
-                  {/* Glow effect on hover */}
-                  <motion.span
-                    className="absolute inset-0 bg-primary/5 rounded-lg -z-10"
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full -z-10"
+                    initial={{ opacity: 0, scale: 0.9 }}
                     whileHover={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.25 }}
                   />
                 </motion.a>
               ))}
@@ -256,14 +279,14 @@ const Header = () => {
               animate={{ 
                 opacity: 1, 
                 scale: 1,
-                transition: { delay: 0.8, duration: 0.3 }
+                transition: { delay: 0.5, duration: 0.3 }
               }}
             >
               <Button 
                 ref={menuButtonRef}
                 variant="ghost" 
                 size="icon" 
-                className="md:hidden relative w-10 h-10 hover:bg-primary/10 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-lg"
+                className="md:hidden relative w-9 h-9 hover:bg-primary/10 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-primary/40 rounded-full"
                 onClick={toggleMobileMenu}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
@@ -271,26 +294,28 @@ const Header = () => {
               >
                 <div className="w-5 h-5 flex flex-col justify-center items-center">
                   <motion.span
-                    className="block w-5 h-0.5 bg-foreground origin-center transition-all duration-300"
+                    className="block w-4 h-0.5 bg-foreground origin-center"
                     variants={line1Variants}
                     animate={isMobileMenuOpen ? 'open' : 'closed'}
                   />
                   <motion.span
-                    className="block w-5 h-0.5 bg-foreground my-1 transition-all duration-300"
+                    className="block w-4 h-0.5 bg-foreground my-1"
                     variants={line2Variants}
                     animate={isMobileMenuOpen ? 'open' : 'closed'}
                   />
                   <motion.span
-                    className="block w-5 h-0.5 bg-foreground origin-center transition-all duration-300"
+                    className="block w-4 h-0.5 bg-foreground origin-center"
                     variants={line3Variants}
                     animate={isMobileMenuOpen ? 'open' : 'closed'}
                   />
                 </div>
               </Button>
             </motion.div>
-          </div>
-        </div>
-      </motion.header>
+              </div>
+            </div>
+          </motion.div>
+        </motion.header>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -310,7 +335,7 @@ const Header = () => {
             <motion.div
               ref={mobileMenuRef}
               id="mobile-menu"
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-background via-background/95 to-background/90 backdrop-blur-xl border-l border-primary/20 shadow-2xl z-50 md:hidden"
+              className="fixed top-4 right-4 sm:top-6 sm:right-6 h-[calc(100vh-2rem)] sm:h-[calc(100vh-3rem)] w-80 max-w-[calc(100vw-2rem)] bg-gradient-to-b from-background via-background/95 to-background/90 backdrop-blur-xl border border-primary/20 shadow-2xl z-50 md:hidden rounded-3xl"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -321,20 +346,19 @@ const Header = () => {
                 <div className="absolute bottom-20 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl" /> */}
                 
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-primary/10 bg-gradient-to-r from-primary/5 to-transparent">
+                <div className="flex items-center justify-between p-6 border-b border-primary/10 bg-gradient-to-r from-primary/5 to-transparent rounded-t-3xl">
                   <motion.h2 
                     className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Main Menu
+                    Menu
                   </motion.h2>
                    <Button
                     variant="ghost"
                     size="icon"
-                    className="cursor-pointer w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-xl border border-primary/20 hover:border-primary/40"
+                    className="cursor-pointer w-10 h-10 hover:bg-primary/10 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-full border border-primary/20 hover:border-primary/40"
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label="Close menu"
                   >
@@ -391,7 +415,7 @@ const Header = () => {
 
                 {/* Menu Footer */}
                 <motion.div 
-                  className="p-6 border-t border-primary/10 bg-gradient-to-r from-transparent to-primary/5"
+                  className="p-6 border-t border-primary/10 bg-gradient-to-r from-transparent to-primary/5 rounded-b-3xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
