@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star, Youtube, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-cinematic-new.jpg";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedText } from "@/components/animations/AnimatedText";
@@ -17,37 +16,22 @@ const socialLinks = [
 ];
 
 const Hero = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-  
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   return (
     <section 
-      ref={heroRef}
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-offset"
     >
-      {/* Lighter, More Dynamic Background with Parallax */}
-      <motion.div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+      {/* Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
           backgroundImage: `url(${heroImage})`,
-          transform: "translateZ(0)", // Force GPU acceleration
-          y 
         }}
       >
-        <motion.div 
-          className="absolute inset-0 bg-background/15 will-change-opacity"
-          style={{ opacity }}
-        ></motion.div>
+        <div className="absolute inset-0 bg-background/15"></div>
         {/* Minimal overlay for text readability */}
         <div className="absolute inset-0 gradient-fresh opacity-20"></div>
-      </motion.div>
+      </div>
 
       {/* Animated Effects Layer */}
       <HeroEffects />
