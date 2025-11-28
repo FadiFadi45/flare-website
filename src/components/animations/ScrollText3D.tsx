@@ -16,66 +16,68 @@ export const ScrollText3D = ({ children, className = "" }: ScrollText3DProps) =>
   useEffect(() => {
     if (!textRef.current || !containerRef.current) return;
 
-    const words = children.split(' ');
-    const wrappedText = words.map((word, index) => 
-      `<span class="word-3d" style="display: inline-block; perspective: 1000px;">
-        <span style="display: inline-block; transform-style: preserve-3d;">${word}</span>
-      </span>${index < words.length - 1 ? ' ' : ''}`
-    ).join('');
-    
-    textRef.current.innerHTML = wrappedText;
+    // Use requestAnimationFrame to batch DOM operations
+    requestAnimationFrame(() => {
+      if (!textRef.current || !containerRef.current) return;
 
-    const wordElements = textRef.current.querySelectorAll('.word-3d span');
+      const words = children.split(' ');
+      const wrappedText = words.map((word, index) => 
+        `<span class="word-3d" style="display: inline-block; perspective: 1000px; opacity: 0; transform: rotateX(-90deg) translateY(50px); transform-origin: center center; will-change: transform, opacity;">
+          <span style="display: inline-block; transform-style: preserve-3d;">${word}</span>
+        </span>${index < words.length - 1 ? ' ' : ''}`
+      ).join('');
+      
+      textRef.current.innerHTML = wrappedText;
 
-    // Initial state
-    gsap.set(wordElements, {
-      opacity: 0,
-      rotateX: -90,
-      y: 50,
-      transformOrigin: 'center center',
-    });
+      // Batch DOM reads after writes complete
+      requestAnimationFrame(() => {
+        if (!textRef.current || !containerRef.current) return;
+        
+        const wordElements = textRef.current.querySelectorAll('.word-3d');
 
-    // Create scroll-triggered animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: 1,
-        toggleActions: 'play none none reverse',
-      }
-    });
-
-    tl.to(wordElements, {
-      opacity: 1,
-      rotateX: 0,
-      y: 0,
-      duration: 1,
-      stagger: {
-        each: 0.05,
-        from: 'start',
-      },
-      ease: 'power3.out',
-    });
-
-    // Add hover effect for each word
-    wordElements.forEach((word) => {
-      const element = word as HTMLElement;
-      element.addEventListener('mouseenter', () => {
-        gsap.to(element, {
-          rotateY: 10,
-          z: 20,
-          duration: 0.3,
-          ease: 'power2.out',
+        // Create scroll-triggered animation
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: 1,
+            toggleActions: 'play none none reverse',
+          }
         });
-      });
 
-      element.addEventListener('mouseleave', () => {
-        gsap.to(element, {
-          rotateY: 0,
-          z: 0,
-          duration: 0.3,
-          ease: 'power2.out',
+        tl.to(wordElements, {
+          opacity: 1,
+          rotateX: 0,
+          y: 0,
+          duration: 1,
+          stagger: {
+            each: 0.05,
+            from: 'start',
+          },
+          ease: 'power3.out',
+        });
+
+        // Add hover effect for each word
+        wordElements.forEach((word) => {
+          const element = word as HTMLElement;
+          element.addEventListener('mouseenter', () => {
+            gsap.to(element, {
+              rotateY: 10,
+              z: 20,
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+
+          element.addEventListener('mouseleave', () => {
+            gsap.to(element, {
+              rotateY: 0,
+              z: 0,
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
         });
       });
     });
