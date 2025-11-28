@@ -3,6 +3,7 @@ import { Play, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { logoAnimation } from "@/lib/animations";
 import { useState, useEffect, useRef } from "react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -144,15 +145,20 @@ const Header = () => {
               animate="visible"
               whileHover="hover"
             >
-              <div className="relative">
-                <motion.img 
-                  src="/lovable-uploads/871b753f-ac14-4513-8da8-8f974ba0ea9c.png" 
-                  alt="Flare Media Logo" 
+              <motion.div 
+                className="relative"
+                whileHover={{ scale: 1.1, rotate: 2 }}
+              >
+                <OptimizedImage
+                  src="/lovable-uploads/flare-logo-optimized.webp"
+                  alt="Flare Media Logo"
                   className="h-8 sm:h-10 w-auto transition-spring"
-                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  width={200}
+                  height={82}
+                  priority={true}
                 />
                 <motion.div 
-                  className="absolute inset-0 rounded-lg opacity-0 gradient-fresh"
+                  className="absolute inset-0 rounded-lg opacity-0 gradient-fresh pointer-events-none"
                   whileHover={{ 
                     opacity: 0.3,
                     transition: { duration: 0.3 }
@@ -160,7 +166,7 @@ const Header = () => {
                 ></motion.div>
                 {/* Enhanced light sweep effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 rounded-lg pointer-events-none"
                   initial={{ x: '-100%', opacity: 0 }}
                   animate={{
                     x: ['100%', '200%'],
@@ -174,7 +180,7 @@ const Header = () => {
                     }
                   }}
                 />
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Desktop Navigation */}
