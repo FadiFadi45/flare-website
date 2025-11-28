@@ -80,13 +80,8 @@ const Hero = () => {
           {/* Professional Subtitle with Enhanced Design */}
           <AnimatedSection delay={0.6}>
             <div className="relative max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-              {/* Main Subtitle */}
-              <motion.div
-                className="relative px-2 sm:px-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-              >
+              {/* Main Subtitle - Visible immediately for LCP optimization */}
+              <div className="relative px-2 sm:px-0">
                 <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-8 sm:mb-12 lg:mb-16 leading-tight sm:leading-relaxed tracking-wide drop-shadow-lg shadow-black/50">
                   Own the Legacy. Stream the Culture. Relive the Moments — with FLARE
                 </p>
@@ -97,7 +92,7 @@ const Hero = () => {
                     At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
                   </ScrollText3D>
                 </div>
-              </motion.div>
+              </div>
               
               {/* Decorative Elements - Hidden on mobile */}
               <div className="hidden sm:block absolute -top-2 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
