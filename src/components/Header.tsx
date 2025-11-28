@@ -7,35 +7,20 @@ import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems = ['Home', 'About', 'Services', 'Productions', 'Channels', 'Contact'];
 
-  // Handle scroll for navbar visibility and background
+  // Handle scroll for navbar background
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show/hide based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down & past threshold
-        setIsVisible(false);
-      } else {
-        // Scrolling up or at top
-        setIsVisible(true);
-      }
-      
-      // Background blur effect
-      setIsScrolled(currentScrollY > 50);
-      setLastScrollY(currentScrollY);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -168,14 +153,7 @@ const Header = () => {
         <motion.header 
           className="mt-4 sm:mt-6 w-full max-w-6xl"
           initial={{ y: 0, opacity: 1 }}
-          animate={{
-            y: isVisible ? 0 : -120,
-            opacity: isVisible ? 1 : 0,
-          }}
-          transition={{ 
-            duration: 0.4, 
-            ease: [0.25, 0.46, 0.45, 0.94]
-          }}
+          animate={{ y: 0, opacity: 1 }}
         >
           <motion.div
             className="relative rounded-full shadow-2xl overflow-hidden"
