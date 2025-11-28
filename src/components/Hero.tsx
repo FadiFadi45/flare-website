@@ -91,12 +91,15 @@ const Hero = () => {
                   Own the Legacy. Stream the Culture. Relive the Moments — with FLARE
                 </p>
                 
-                {/* Secondary Description - Hidden on mobile with 3D Scroll Animation */}
-                <div className="hidden sm:block">
-                  <ScrollText3D className="text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0">
-                    At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
-                  </ScrollText3D>
-                </div>
+                {/* Secondary Description - Hidden on mobile */}
+                <motion.p
+                  className="hidden sm:block text-sm sm:text-base lg:text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md shadow-black/40 px-4 sm:px-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.8 }}
+                >
+                  At FLARE, we bring iconic series back to life — digitally. As proud owners of timeless IPs, we transform nostalgia into streaming experiences that resonate with today's audiences. From classic drama to cultural gems, our content bridges generations and platforms, making heritage accessible, engaging, and monetizable across social media.
+                </motion.p>
               </motion.div>
               
               {/* Decorative Elements - Hidden on mobile */}
