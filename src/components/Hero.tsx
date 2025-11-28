@@ -122,26 +122,6 @@ const Hero = () => {
             <div className="relative px-4 sm:px-0">
               {/* Main Container */}
               <div className="mx-auto max-w-sm sm:max-w-md">
-                {/* Header Section - Simplified for mobile */}
-                <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-                  <motion.h3 
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-gradient-logo mb-1 sm:mb-2 tracking-tight drop-shadow-lg shadow-black/50"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.4, duration: 0.6 }}
-                  >
-                    Connect & Create
-                  </motion.h3>
-                  <motion.p 
-                    className="hidden sm:block text-xs sm:text-sm text-foreground/95 font-medium tracking-wide drop-shadow-md shadow-black/40"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.6, duration: 0.6 }}
-                  >
-                    Join our creative community
-                  </motion.p>
-                </div>
-
                 {/* Social Icons Grid */}
                 <motion.div 
                   className="flex items-center justify-center gap-3 sm:gap-4"
