@@ -103,16 +103,6 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
             >
-              {/* Stay Connected Label - Vertical on desktop */}
-              <motion.p 
-                className="hidden lg:block text-xs text-muted-foreground/60 font-medium tracking-wider uppercase mb-2"
-                style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.4, duration: 0.8 }}
-              >
-                Stay Connected
-              </motion.p>
 
               {/* Social Icons */}
               <motion.div 
